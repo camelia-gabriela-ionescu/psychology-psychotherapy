@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & FAQ | Camelia-Gabriela Ionescu</title>
+    <style>
+        /* Shared CSS Variables and Base Styles */
+        :root {
+            --primary-color: #2c3e50; 
+            --accent-color: #7f8c8d; 
+            --bg-color: #ffffff; 
+            --bg-secondary: #f9fbfb; 
+            --text-main: #333333;
+            --text-light: #666666; 
+            --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --spacing-lg: 80px;
+            --border-radius: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-main); color: var(--text-main); background-color: var(--bg-color); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4 { color: var(--primary-color); font-weight: 300; line-height: 1.2; }
+        p { margin-bottom: 1.2rem; color: var(--text-light); }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
+        a:hover { color: var(--accent-color); }
+
+        /* Navigation */
+        header { background-color: var(--bg-color); padding: 20px 5%; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Page Header */
+        .page-header { background-color: var(--bg-secondary); padding: 60px 20px; text-align: center; border-bottom: 1px solid #eaeaea; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 15px; }
+        .page-header p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: var(--text-light); }
+
+        /* FAQ Content Styling */
+        main { flex: 1; padding: 60px 20px; max-width: 900px; margin: 0 auto; width: 100%; }
+        
+        /* Accordion Styles */
+        .faq-item { border-bottom: 1px solid #eaeaea; margin-bottom: 10px; }
+        .faq-item:last-child { border-bottom: none; }
+        
+        details { width: 100%; }
+        summary { font-size: 1.2rem; font-weight: 500; color: var(--primary-color); padding: 20px 0; cursor: pointer; position: relative; list-style: none; transition: color 0.3s ease; }
+        summary::-webkit-details-marker { display: none; } /* Hide default arrow in webkit */
+        summary:hover { color: var(--accent-color); }
+        
+        /* Custom Plus/Minus Icon */
+        summary::after { content: '+'; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--accent-color); transition: transform 0.3s ease, content 0.3s ease; }
+        details[open] summary::after { content: '−'; }
+        details[open] summary { border-bottom: none; }
+        
+        .faq-answer { padding: 0 0 25px 0; color: var(--text-light); font-size: 1.05rem; animation: fade-in 0.4s ease-in-out; }
+        
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Call to Action */
+        .faq-cta { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid #eaeaea; }
+        .btn { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 30px; border-radius: 4px; font-size: 1.05rem; font-weight: 500; margin-top: 20px; transition: background 0.3s; }
+        .btn:hover { background-color: var(--accent-color); color: white; }
+
+        /* Footer */
+        footer { background-color: var(--primary-color); color: white; padding: 40px 20px; margin-top: auto; }
+        .footer-content { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; list-style: none; }
+        .footer-nav a { color: #d1d8e0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-nav a:hover { color: white; }
+        .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .page-header h1 { font-size: 2rem; }
+            summary { padding-right: 30px; } /* Ensure text doesn't overlap the plus icon on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Camelia-Gabriela Ionescu</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="projects.html">Projects & Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Help & Frequently Asked Questions</h1>
+        <p>Find answers to common questions about therapy, the process, and what to expect from our sessions.</p>
+    </section>
+
+    <main>
+        
+        <div class="faq-item">
+            <details>
+                <summary>What is Emotionally Focused Therapy (EFT)?</summary>
+                <div class="faq-answer">
+                    <p>Emotionally Focused Therapy (EFT) is a highly effective, evidence-based therapeutic approach primarily used for couples, but also applicable to individuals and families. It is rooted in the science of adult attachment. Instead of just teaching communication skills, EFT helps you identify the underlying emotional needs and fears that drive negative patterns or conflicts. By addressing these core emotions, EFT helps rebuild trust and foster secure, lasting connections.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>How long does therapy usually take?</summary>
+                <div class="faq-answer">
+                    <p>The length of therapy is highly individual and depends on your unique goals, the complexity of the issues we are addressing, and your personal history. Some clients find relief and clarity within 8 to 12 sessions (brief therapy), while others working through deep-seated trauma or complex relational dynamics may benefit from longer-term support over several months or more. We will regularly review our progress together to ensure you are getting what you need.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Do you offer online sessions?</summary>
+                <div class="faq-answer">
+                    <p>Yes, I offer both in-person sessions at my practice in Bucharest and secure online sessions via a compliant video platform. Online therapy is highly effective and provides a convenient option for those with busy schedules, mobility constraints, or who reside outside the immediate area.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Are my sessions confidential?</summary>
+                <div class="faq-answer">
+                    <p>Absolutely. Confidentiality is the foundation of a safe therapeutic relationship and is mandated by the ethical guidelines of the Romanian College of Psychologists. Everything discussed in our sessions, as well as your clinical records, remains strictly confidential. The only rare exceptions are if there is an imminent risk of severe harm to yourself or others, or if a court of law explicitly mandates disclosure. You can read more about this in my <a href="privacy.html">Privacy Policy</a>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>What is the difference between a psychologist and a psychiatrist?</summary>
+                <div class="faq-answer">
+                    <p>A <strong>Clinical Psychologist</strong> (like myself) has advanced degrees in psychology and provides psychotherapy, psychological assessment, and behavioral interventions. We focus on exploring your thoughts, emotions, and relationship patterns through talking therapies.</p>
+                    <p>A <strong>Psychiatrist</strong> is a medical doctor who specializes in mental health. They are licensed to prescribe medication (such as antidepressants or anti-anxiety meds) to help manage the physiological symptoms of mental health conditions. Depending on your needs, psychologists and psychiatrists often work collaboratively to provide comprehensive care.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>How do I prepare for my first session?</summary>
+                <div class="faq-answer">
+                    <p>There is no specific preparation required. The first session is an opportunity for us to get to know each other. I will ask questions to understand your background, current challenges, and what you hope to achieve through therapy. It is perfectly normal to feel nervous! Just come as you are, and we will take it at a pace that feels comfortable for you.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Do you accept health insurance?</summary>
+                <div class="faq-answer">
+                    <p>My practice is currently fee-for-service. I can provide you with detailed invoices that you can submit to your private health insurance provider for potential out-of-network reimbursement, depending on your specific policy. Please check directly with your insurance provider regarding their coverage for out-of-network clinical psychology services.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-cta">
+            <h3>Still have questions?</h3>
+            <p>If you couldn't find the answer you were looking for, I would be happy to discuss it with you directly.</p>
+            <a href="contact.html" class="btn">Contact Me</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-nav">
+                <li><a href="faq.html">Help/FAQ</a></li>
+                <li><a href="terms.html">T&C</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="privacy.html">Privacy & GDPR</a></li>
+                <li><a href="consumer.html">Consumer Info</a></li>
+            </ul>
+            <p class="copyright">&copy; 2026 Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+        </div>
+    </footer>
+
+</body>
+</html>

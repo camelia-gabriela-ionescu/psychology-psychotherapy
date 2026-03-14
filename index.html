@@ -1,304 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Private Practice – Cabinet Individual de Psihologie</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
-  header { background: #284b63; color: white; padding: 10px 20px; position: sticky; top: 0; z-index: 100; }
-  nav { display: flex; flex-direction: column; gap: 4px; }
-  .nav-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  nav a { color: white; text-decoration: none; font-size: 13px; }
-  nav a:hover { text-decoration: underline; }
-  .lang-label { font-weight: bold; margin-right: 8px; }
-    section { padding: 40px 20px; max-width: 960px; margin: 0 auto; }
-    h1, h2 { color: #23313f; }
-    h2 { border-bottom: 1px solid #ddd; padding-bottom: 4px; }
-    ul { padding-left: 20px; }
-    footer { background: #f4f4f4; padding: 20px; text-align: center; font-size: 14px; }
-    .social-buttons a { margin-right: 10px; text-decoration: none; color: #284b63; }
-    .two-column { display: flex; flex-wrap: wrap; gap: 20px; }
-    .two-column > div { flex: 1 1 280px; }
-    form input[type="email"] { padding: 6px; width: 220px; max-width: 80%; }
-    form button { padding: 6px 12px; background: #284b63; color: white; border: none; cursor: pointer; }
-    form button:hover { background: #1f394b; }
-    @media (max-width: 700px) {
-      nav { flex-direction: column; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camelia-Gabriela Ionescu | Clinical Psychologist & EFT Psychotherapist</title>
+    <style>
+        /* Modern CSS Variables */
+        :root {
+            --primary-color: #2c3e50; 
+            --accent-color: #7f8c8d; 
+            --bg-color: #ffffff; 
+            --bg-secondary: #f9fbfb; 
+            --text-main: #333333;
+            --text-light: #666666;
+            --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --spacing-lg: 80px;
+            --border-radius: 8px;
+        }
+
+        /* Base Reset & Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-main); color: var(--text-main); background-color: var(--bg-color); line-height: 1.7; }
+        h1, h2, h3 { color: var(--primary-color); font-weight: 300; line-height: 1.2; }
+        h2 { font-size: 2.2rem; margin-bottom: 20px; text-align: center; }
+        p { margin-bottom: 1.2rem; color: var(--text-light); }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
+        a:hover { color: var(--accent-color); }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* Navigation */
+        header { background-color: var(--bg-color); padding: 20px 5%; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Container */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Hero Banner */
+        .hero { background: #e0e6ed url('https://via.placeholder.com/1920x600/e0e6ed/7f8c8d?text=Hero+Banner+Image+Placeholder') no-repeat center center/cover; height: 60vh; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero-content { background: rgba(255, 255, 255, 0.9); padding: 40px; border-radius: var(--border-radius); max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 400; }
+        .hero p { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0; }
+
+        /* Sections */
+        .welcome { padding: var(--spacing-lg) 0; text-align: center; }
+        .welcome p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+        
+        .services { padding: var(--spacing-lg) 0; background-color: var(--bg-secondary); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
+        .service-card { background: var(--bg-color); padding: 40px; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: center; transition: transform 0.3s ease; border: 1px solid #f0f0f0; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+
+        .bio { padding: var(--spacing-lg) 0; }
+        .bio-wrapper { display: flex; align-items: center; gap: 60px; }
+        .bio-image { flex: 1; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .bio-text { flex: 1; }
+        .bio-text h2 { text-align: left; }
+
+        /* Footer */
+        footer { background-color: var(--primary-color); color: white; padding: 40px 20px; margin-top: 40px; }
+        .footer-content { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; list-style: none; }
+        .footer-nav a { color: #d1d8e0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-nav a:hover { color: white; }
+        .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .bio-wrapper { flex-direction: column; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="nav-row">
-      <span class="lang-label">ENG</span>
-      <a href="#home-en">Home</a>
-      <a href="#about-en">About</a>
-      <a href="#services-en">Services</a>
-      <a href="#diagram-en">Diagram</a>
-      <a href="#giftcard-en">Gift card</a>
-      <a href="#goodies-en">Goodies</a>
-      <a href="#projects-en">Projects</a>
-      <a href="#newsletter-en">Newsletter</a>
-      <a href="#help-en">Help / FAQ</a>
-      <a href="#connect-en">Connect</a>
-      <a href="#tc-en">T&amp;C</a>
-      <a href="#cookie-en">Cookies</a>
-      <a href="#privacy-en">Privacy</a>
-      <a href="#anpc-en">Consumer info</a>
-    </div>
+    <header>
+        <a href="index.html" class="logo">Camelia-Gabriela Ionescu</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="projects.html">Projects & Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="nav-row">
-      <span class="lang-label">RO</span>
-      <a href="#home-ro">Acasă</a>
-      <a href="#about-ro">Despre</a>
-      <a href="#services-ro">Servicii</a>
-      <a href="#diagram-ro">Diagramă</a>
-      <a href="#giftcard-ro">Card cadou</a>
-      <a href="#goodies-ro">Resurse</a>
-      <a href="#projects-ro">Proiecte</a>
-      <a href="#newsletter-ro">Newsletter</a>
-      <a href="#help-ro">Ajutor / Întrebări</a>
-      <a href="#connect-ro">Conectare</a>
-      <a href="#tc-ro">Termeni</a>
-      <a href="#cookie-ro">Cookie-uri</a>
-      <a href="#privacy-ro">Confidențialitate</a>
-      <a href="#anpc-ro">ANPC</a>
-    </div>
-  </nav>
-</header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Clarity & Connection</h1>
+                <p>Clinical Psychology & Emotionally Focused Therapy (EFT)</p>
+            </div>
+        </section>
 
-<!-- ENGLISH SECTIONS – NEW ORDER -->
+        <section class="welcome container">
+            <h2>Welcome to a Safe Space</h2>
+            <p>Navigating life's challenges, emotional distress, or relationship disconnects can feel overwhelming. My practice is dedicated to providing a compassionate, evidence-based environment where you can safely explore your emotions, understand your patterns, and build lasting resilience. Whether you are seeking individual healing or looking to repair and strengthen your relationship, we will work collaboratively toward meaningful change.</p>
+        </section>
 
-<section id="home-en">
-  <h1>Private Practice – Clinical Psychology</h1>
-  <p>Welcome to the private practice of clinical psychologist Camelia Gabriela Ionescu. This space offers confidential psychological assessment, counselling, and psychotherapy for adults (and optionally children/teens, if applicable to you).</p>
-  <p>Here you can learn about services, fees, terms and conditions, data protection (GDPR), and how to book an appointment online or in person.</p>
-</section>
+        <section class="services">
+            <div class="container">
+                <h2>My Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Individual Psychotherapy</h3>
+                        <p>Tailored clinical support for anxiety, depression, trauma, and life transitions. We work together to unpack emotional blockages and foster a deeper sense of self-awareness and well-being.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Couples Therapy (EFT)</h3>
+                        <p>Utilizing Emotionally Focused Therapy to help couples break negative interaction cycles. Rebuild trust, enhance emotional responsiveness, and create a secure, loving bond with your partner.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Clinical Assessment</h3>
+                        <p>Comprehensive psychological evaluations to provide clarity on your mental health. This foundational step helps inform our therapeutic approach and tailor interventions specifically to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="about-en">
-  <h2>About Me / Bio</h2>
-  <div class="two-column">
-    <div>
-      <p>Short professional bio: licensed clinical psychologist (Romanian College of Psychologists), with experience in assessment and intervention for anxiety, depression, stress, and work-related difficulties.</p>
-      <p>Describe your training (e.g. CBT, integrative, systemic), relevant certifications, languages spoken, and membership in professional associations.</p>
-    </div>
-    <div>
-      <p>You can mention your clinical interests, research or projects, and your therapeutic style (collaborative, evidence-based, trauma-informed, etc.).</p>
-      <p>State clearly that this website is not an emergency service and provide emergency contacts for crises.</p>
-    </div>
-  </div>
-</section>
+        <section class="bio container">
+            <div class="bio-wrapper">
+                <div class="bio-image">
+                    <img src="https://via.placeholder.com/600x750/f4f4f4/7f8c8d?text=Portrait+Photo+Placeholder" alt="Camelia-Gabriela Ionescu - Clinical Psychologist">
+                </div>
+                <div class="bio-text">
+                    <h2>Meet Camelia-Gabriela</h2>
+                    <p>I am a licensed Clinical Psychologist and certified Emotionally Focused Therapy (EFT) practitioner based in Romania.</p>
+                    <p>With a foundation in evidence-based clinical practices, my approach is deeply rooted in attachment theory. I believe that human connection is vital to our mental health. Through EFT, I specialize in helping individuals and couples identify the underlying emotions driving their distress and gently guide them toward emotional restructuring and secure attachment.</p>
+                    <p>My goal is not just symptom relief, but to empower you with the emotional tools needed to lead a more authentic, connected, and fulfilling life.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<section id="services-en">
-  <h2>Shop / Services</h2>
-  <ul>
-    <li>Individual clinical consultation (in person or online) – duration, price, who it is for.</li>
-    <li>Psychological assessment packages (e.g. anxiety, depression, personality) – brief description and what clients receive.</li>
-    <li>Couple / family consultations – if applicable to your practice.</li>
-    <li>Workshops, webinars, or psychoeducation groups – optional.</li>
-  </ul>
-  <p>Include booking instructions (contact form, email, phone) and cancellation / rescheduling rules.</p>
-</section>
-
-<section id="diagram-en">
-  <h2>Process Diagram</h2>
-  <p>Here you can describe your process in simple steps (for example: 1) Contact and triage, 2) Initial assessment, 3) Feedback and planning, 4) Intervention, 5) Follow-up).</p>
-  <p>Later, you may replace this text with an image tag, such as: <code>&lt;img src="diagram.png" alt="Therapeutic process"&gt;</code>.</p>
-</section>
-
-<section id="giftcard-en">
-  <h2>Gift Card</h2>
-  <p>If you offer gift cards for sessions, describe how they can be purchased, used, transferred, and the validity period. Clarify any limitations (e.g. not valid for certain services, non-refundable after purchase).</p>
-  <p>Explain how the recipient books using a gift card and what they need to present (code, email confirmation, etc.).</p>
-</section>
-
-<section id="goodies-en">
-  <h2>Goodies / Free Resources</h2>
-  <p>Offer simple, non-diagnostic resources such as psychoeducational PDFs, checklists, grounding exercises, or curated links to reputable mental health information.</p>
-  <p>Clarify that these materials are for general information only and do not replace assessment or therapy.</p>
-</section>
-
-<section id="projects-en">
-  <h2>Projects</h2>
-  <p>List your current or past professional projects: research, community initiatives, collaborations, Erasmus or EU projects, workshops, or publications relevant to your clinical work.</p>
-  <p>You can add links to external project websites, articles, or conference presentations.</p>
-</section>
-
-<section id="newsletter-en">
-  <h2>Newsletter</h2>
-  <p>Invite visitors to subscribe for updates on new resources, workshops, or blog posts. Make sure your use of email addresses here matches your privacy/GDPR statements.</p>
-  <form>
-    <label for="newsletter-email-en">Email: </label>
-    <input type="email" id="newsletter-email-en" name="email" placeholder="your@email">
-    <button type="submit">Subscribe</button>
-  </form>
-  <p>Later you can connect this form to a newsletter service (e.g. Mailchimp, Buttondown, etc.).</p>
-</section>
-
-<section id="help-en">
-  <h2>Help / FAQ / How To</h2>
-  <ul>
-    <li>How to book an appointment (steps, contact channels, approximate waiting time).</li>
-    <li>How online sessions work (platform, technical requirements, confidentiality and privacy tips).</li>
-    <li>What to expect in the first session and how to prepare.</li>
-    <li>What to do in case of emergency (with clear external emergency contacts).</li>
-  </ul>
-</section>
-
-<section id="connect-en">
-  <h2>Connect / Social Media</h2>
-  <p>Follow or contact the practice via the channels below:</p>
-  <div class="social-buttons">
-    <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
-    <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-    <a href="mailto:youremail@example.com">Email</a>
-  </div>
-</section>
-
-<section id="tc-en">
-  <h2>Terms &amp; Conditions (T&amp;C)</h2>
-  <p>This section summarises conditions for using the website and for accessing services: eligibility, booking and payment rules, cancellation and no-show policy, limitations of the online medium, and disclaimers (for example: this site does not provide emergency services or medical diagnoses).</p>
-  <p>You can reference a more detailed PDF or document if needed, and state how clients accept these terms (e.g. by booking a session they agree to the terms).</p>
-</section>
-
-<section id="cookie-en">
-  <h2>Cookie Policy</h2>
-  <p>Explain whether your site uses cookies (e.g. basic technical cookies, analytics, or none). If you later add analytics or third-party tools, update this section to reflect types of cookies, purposes, and retention periods.</p>
-  <p>Indicate that users can control cookies via browser settings and, if relevant, via a cookie banner on the site.</p>
-</section>
-
-<section id="privacy-en">
-  <h2>Privacy Policy</h2>
-  <p>Briefly describe what personal data the website collects (e.g. contact form details, newsletter emails), why it is collected, where it is stored, and how long it is kept. Distinguish between website data and clinical records, which follow separate professional rules.</p>
-  <p>State who is the data controller (your name and practice details) and provide a contact email for privacy questions or requests.</p>
-</section>
-
-<section id="anpc-en">
-  <h2>Consumer Information (ANPC)</h2>
-  <p>For Romanian clients, include legally required consumer protection information, such as contact details for ANPC and the EU online dispute resolution (ODR) platform link.</p>
-  <p>Example: indicate where clients can file complaints related to services or contracts, according to Romanian consumer law.</p>
-</section>
-
-<!-- ROMANIAN SECTIONS – NEW ORDER -->
-
-<section id="home-ro">
-  <h1>Cabinet Individual de Psihologie</h1>
-  <p>Bun venit pe pagina cabinetului individual de psihologie Camelia Gabriela Ionescu. Aici găsești informații despre evaluare psihologică, consiliere și psihoterapie, în condiții de confidențialitate și respect.</p>
-  <p>Poți afla ce servicii sunt disponibile, care sunt tarifele, termenii și condițiile, informațiile despre protecția datelor (GDPR) și cum poți programa o ședință, online sau față în față.</p>
-</section>
-
-<section id="about-ro">
-  <h2>Despre mine / Bio</h2>
-  <div class="two-column">
-    <div>
-      <p>Scurtă prezentare profesională: psiholog clinician cu drept de liberă practică (Colegiul Psihologilor din România), cu experiență în evaluarea și intervenția în anxietate, depresie, stres și dificultăți legate de muncă sau relații.</p>
-      <p>Include formarea ta (ex. CBT, integrativă, sistemică), certificările relevante, limbile în care lucrezi și apartenența la organizații profesionale.</p>
-    </div>
-    <div>
-      <p>Poți menționa ariile tale de interes clinic, proiectele sau cercetările la care contribui și stilul tău terapeutic (colaborativ, bazat pe dovezi, sensibil la traumă etc.).</p>
-      <p>Precizează clar că acest site nu este un serviciu de urgență și oferă contacte pentru situații de criză.</p>
-    </div>
-  </div>
-</section>
-
-<section id="services-ro">
-  <h2>Shop / Servicii</h2>
-  <ul>
-    <li>Consultație psihologică individuală (față în față sau online) – durată, tarif, pentru cine este recomandată.</li>
-    <li>Pachete de evaluare psihologică (ex. anxietate, depresie, personalitate) – descriere scurtă și ce primește clientul.</li>
-    <li>Ședințe de cuplu / familie – dacă sunt incluse în practica ta.</li>
-    <li>Ateliere, webinarii sau grupuri de psihoeducație – opțional.</li>
-  </ul>
-  <p>Include modul de programare (formular, email, telefon) și regulile pentru anulare / reprogramare.</p>
-</section>
-
-<section id="diagram-ro">
-  <h2>Diagramă / Parcurs</h2>
-  <p>Aici poți descrie pe scurt parcursul psihologic (de exemplu: 1) Contact și triere, 2) Evaluare inițială, 3) Feedback și plan, 4) Intervenție, 5) Monitorizare).</p>
-  <p>Ulterior poți înlocui acest text cu o imagine: <code>&lt;img src="diagrama.png" alt="Parcurs terapeutic"&gt;</code>.</p>
-</section>
-
-<section id="giftcard-ro">
-  <h2>Card cadou</h2>
-  <p>Dacă oferi carduri cadou pentru ședințe, descrie cum pot fi achiziționate, utilizate, transferate și care este perioada de valabilitate. Precizează eventualele limitări (de exemplu, nu sunt valabile pentru anumite servicii, nerambursabile după achiziție).</p>
-  <p>Explică modul în care beneficiarul își face programare folosind cardul (cod, email de confirmare etc.).</p>
-</section>
-
-<section id="goodies-ro">
-  <h2>Resurse / Goodies</h2>
-  <p>Pune la dispoziție resurse cu caracter general, de informare: materiale PDF de psihoeducație, liste de verificare, exerciții simple sau linkuri către surse de informare de încredere.</p>
-  <p>Precizează că aceste materiale nu înlocuiesc evaluarea sau intervenția psihologică și nu reprezintă un diagnostic.</p>
-</section>
-
-<section id="projects-ro">
-  <h2>Proiecte</h2>
-  <p>Prezintă proiectele tale profesionale: cercetare, inițiative în comunitate, colaborări, proiecte Erasmus sau UE, workshopuri sau publicații relevante pentru practica clinică.</p>
-  <p>Poți include linkuri către pagini externe de proiecte, articole sau prezentări la conferințe.</p>
-</section>
-
-<section id="newsletter-ro">
-  <h2>Newsletter</h2>
-  <p>Invită vizitatorii să se aboneze pentru a primi noutăți despre resurse, ateliere sau articole noi. Asigură-te că modul în care folosești adresele de email este în acord cu politica de confidențialitate și cu GDPR.</p>
-  <form>
-    <label for="newsletter-email-ro">Email: </label>
-    <input type="email" id="newsletter-email-ro" name="email" placeholder="emailul tău">
-    <button type="submit">Abonare</button>
-  </form>
-  <p>Ulterior poți conecta acest formular la un serviciu de newsletter.</p>
-</section>
-
-<section id="help-ro">
-  <h2>Ajutor / Întrebări frecvente</h2>
-  <ul>
-    <li>Cum se face o programare (pași, canale de contact, timp aproximativ de răspuns).</li>
-    <li>Cum se desfășoară ședințele online (platformă, cerințe tehnice, sfaturi pentru confidențialitate).</li>
-    <li>La ce să se aștepte clientul la prima ședință și cum se poate pregăti.</li>
-    <li>Ce poate face o persoană în situație de urgență (cu indicarea serviciilor de urgență externe).</li>
-  </ul>
-</section>
-
-<section id="connect-ro">
-  <h2>Conectare / Social media</h2>
-  <p>Urmărește sau contactează cabinetul prin:</p>
-  <div class="social-buttons">
-    <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
-    <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-    <a href="mailto:youremail@example.com">Email</a>
-  </div>
-</section>
-
-<section id="tc-ro">
-  <h2>Termeni &amp; Condiții</h2>
-  <p>Aici rezumi condițiile de utilizare a site-ului și a serviciilor: eligibilitate, reguli de programare și plată, politica de anulare și neprezentare, limitele mediului online și eventuale renunțări la responsabilitate.</p>
-  <p>Poți face trimitere la un document mai detaliat și menționa că, prin programarea unei ședințe, clientul confirmă că a citit și acceptă termenii.</p>
-</section>
-
-<section id="cookie-ro">
-  <h2>Politica de cookie-uri</h2>
-  <p>Explică ce tipuri de cookie-uri folosește site-ul (ex. cookie-uri tehnice, de analiză, sau deloc) și în ce scop. Dacă ulterior adaugi instrumente de analiză sau servicii terțe, actualizează această secțiune.</p>
-  <p>Menționează că utilizatorii își pot gestiona preferințele din setările browserului sau, după caz, dintr-un banner de cookie-uri.</p>
-</section>
-
-<section id="privacy-ro">
-  <h2>Politica de confidențialitate</h2>
-  <p>Descrie pe scurt ce date personale colectează site-ul (ex. date din formularul de contact, adrese de email pentru newsletter), de ce sunt colectate, unde sunt stocate și cât timp sunt păstrate. Distinge între datele de pe site și dosarele clinice, care urmează reguli profesionale specifice.</p>
-  <p>Precizează cine este operatorul de date (numele tău și datele cabinetului) și o adresă de contact pentru întrebări sau solicitări legate de protecția datelor.</p>
-</section>
-
-<section id="anpc-ro">
-  <h2>Informații ANPC</h2>
-  <p>Pentru clienții din România, include informațiile cerute de legislația de protecție a consumatorilor, precum datele de contact ale ANPC și linkul către platforma europeană SOL (ODR).</p>
-  <p>Indică unde pot depune clienții sesizări referitoare la serviciile sau contractele încheiate cu tine.</p>
-</section>
-
-<footer>
-  <p>&copy; 2026 Camelia-Gabriela Ionescu, Cabinet Individual de Psihologie / Camelia-Gabriela Ionescu, Private Practice. All rights reserved.</p>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-nav">
+                <li><a href="faq.html">Help/FAQ</a></li>
+                <li><a href="terms.html">T&C</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="privacy.html">Privacy & GDPR</a></li>
+                <li><a href="consumer.html">Consumer Info</a></li>
+            </ul>
+            <p class="copyright">&copy; 2026 Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+        </div>
+    </footer>
 
 </body>
 </html>

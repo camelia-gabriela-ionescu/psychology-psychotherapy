@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Information (ANPC) | Camelia-Gabriela Ionescu</title>
+    <style>
+        /* Shared CSS Variables and Base Styles */
+        :root {
+            --primary-color: #2c3e50; 
+            --accent-color: #7f8c8d; 
+            --bg-color: #ffffff; 
+            --bg-secondary: #f9fbfb; 
+            --text-main: #333333;
+            --text-light: #444444; 
+            --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --spacing-lg: 80px;
+            --border-radius: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-main); color: var(--text-main); background-color: var(--bg-color); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4 { color: var(--primary-color); font-weight: 300; line-height: 1.2; }
+        p { margin-bottom: 1.2rem; color: var(--text-light); }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; font-weight: 500; }
+        a:hover { color: var(--accent-color); text-decoration: underline; }
+
+        /* Navigation */
+        header { background-color: var(--bg-color); padding: 20px 5%; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; }
+        .logo:hover { text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; }
+        nav a:hover { text-decoration: none; }
+
+        /* Page Header */
+        .page-header { background-color: var(--bg-secondary); padding: 50px 20px; text-align: center; border-bottom: 1px solid #eaeaea; }
+        .page-header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .page-header p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* Legal Content Styling */
+        main { flex: 1; padding: 60px 20px; max-width: 850px; margin: 0 auto; width: 100%; }
+        .legal-doc h2 { font-size: 1.5rem; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid #eaeaea; padding-bottom: 8px; }
+        .legal-doc h2:first-child { margin-top: 0; }
+        .legal-doc h3 { font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; font-weight: 500; }
+        .legal-doc ul { margin-left: 20px; margin-bottom: 20px; color: var(--text-light); }
+        .legal-doc li { margin-bottom: 8px; }
+        .legal-doc .last-updated { font-style: italic; color: #888; margin-bottom: 40px; font-size: 0.9rem; }
+        
+        /* ANPC Banner Box */
+        .anpc-box { background-color: var(--bg-secondary); border: 1px solid #ddd; padding: 25px; border-radius: var(--border-radius); margin-top: 30px; display: flex; flex-direction: column; gap: 15px; }
+        .anpc-box h3 { margin-top: 0; border-bottom: none; padding-bottom: 0; }
+        .btn-outline { display: inline-block; padding: 10px 20px; border: 2px solid var(--primary-color); color: var(--primary-color); border-radius: 4px; text-align: center; font-weight: 500; transition: all 0.3s; width: fit-content; }
+        .btn-outline:hover { background-color: var(--primary-color); color: white; text-decoration: none; }
+
+        /* Footer */
+        footer { background-color: var(--primary-color); color: white; padding: 40px 20px; margin-top: auto; }
+        .footer-content { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; list-style: none; }
+        .footer-nav a { color: #d1d8e0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; }
+        .footer-nav a:hover { color: white; text-decoration: none; }
+        .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .page-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Camelia-Gabriela Ionescu</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="projects.html">Projects & Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Consumer Information</h1>
+        <p>Information regarding your rights as a consumer and official dispute resolution channels.</p>
+    </section>
+
+    <main class="legal-doc">
+        <p class="last-updated">Last Updated: March 2026</p>
+
+        <h2>1. Commitment to Quality of Care</h2>
+        <p>As a licensed clinical psychologist in Romania, my practice is strictly governed by the ethical codes, professional standards, and regulations set forth by the <strong>Colegiul Psihologilor din România</strong> (Romanian College of Psychologists). I am committed to providing the highest quality of evidence-based psychological care and maintaining complete transparency regarding my services and fees.</p>
+        <p>If you have any concerns, questions, or complaints regarding the services provided, I highly encourage you to address them directly with me first. Open communication is a vital part of the therapeutic process, and I am committed to resolving any misunderstandings amicably.</p>
+
+        <h2>2. Consumer Protection (ANPC)</h2>
+        <p>In accordance with Romanian legislation, you have specific rights as a consumer. The <strong>Autoritatea Națională pentru Protecția Consumatorilor (ANPC)</strong> is the governmental body responsible for consumer protection in Romania.</p>
+        
+        <div class="anpc-box">
+            <h3>ANPC Contact Information</h3>
+            <p><strong>Telefonul Consumatorului:</strong> 021 9551 (număr cu tarif normal, apelabil din orice rețea)</p>
+            <p><strong>Website oficial:</strong> Pentru a accesa site-ul oficial al Autorității Naționale pentru Protecția Consumatorilor, vă rugăm să vizitați linkul de mai jos:</p>
+            <a href="https://anpc.ro/" target="_blank" class="btn-outline">Vizitează anpc.ro</a>
+        </div>
+
+        <h2>3. Online Dispute Resolution (SOL)</h2>
+        <p>If you are a consumer residing within the European Union and you have engaged in my services or purchased materials online, you have the right to utilize the European Commission's Online Dispute Resolution (ODR) platform. This platform is designed to facilitate the out-of-court resolution of disputes related to contractual obligations stemming from online sales or service contracts.</p>
+        
+        <div class="anpc-box">
+            <h3>Platforma SOL (Soluționarea Online a Litigiilor)</h3>
+            <p>Această platformă europeană este un instrument pus la dispoziție de Comisia Europeană pentru a permite consumatorilor și comercianților să soluționeze litigiile online în mod independent, imparțial, transparent, eficace, rapid și echitabil.</p>
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" class="btn-outline">Accesează Platforma SOL</a>
+        </div>
+
+        <h2>4. Alternative Dispute Resolution (SAL)</h2>
+        <p>In addition to the SOL platform, you may also seek resolution through the Alternative Dispute Resolution (SAL) mechanisms provided under Romanian law, designed to offer an alternative to traditional court proceedings.</p>
+
+        <h2>5. Professional Disputes</h2>
+        <p>Please note that complaints regarding strictly <em>clinical</em> or <em>ethical</em> psychological practices (e.g., breaches of confidentiality, professional misconduct) fall under the jurisdiction of the <strong>Colegiul Psihologilor din România</strong>. For matters pertaining to commercial aspects (e.g., billing, clear display of fees), the ANPC holds jurisdiction.</p>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-nav">
+                <li><a href="faq.html">Help/FAQ</a></li>
+                <li><a href="terms.html">T&C</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="privacy.html">Privacy & GDPR</a></li>
+                <li><a href="consumer.html">Consumer Info</a></li>
+            </ul>
+            <p class="copyright">&copy; 2026 Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+        </div>
+    </footer>
+
+</body>
+</html>
