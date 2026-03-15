@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Emotionally Focused Therapy (EFT) | Camelia-Gabriela Ionescu</title>
+    <style>
+        /* Shared CSS Variables and Base Styles */
+        :root {
+            --primary-color: #2c3e50; 
+            --accent-color: #7f8c8d; 
+            --bg-color: #ffffff; 
+            --bg-secondary: #f9fbfb; 
+            --text-main: #333333;
+            --text-light: #444444; 
+            --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --spacing-lg: 80px;
+            --border-radius: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-main); color: var(--text-main); background-color: var(--bg-color); line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4 { color: var(--primary-color); font-weight: 300; line-height: 1.3; margin-bottom: 20px; }
+        p { margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.05rem; }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
+        a:hover { color: var(--accent-color); }
+        img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius); }
+
+        /* Navigation */
+        header { background-color: var(--bg-color); padding: 20px 5%; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Article Layout */
+        main { flex: 1; padding: 60px 20px; max-width: 800px; margin: 0 auto; width: 100%; }
+        
+        .back-link { display: inline-flex; align-items: center; gap: 5px; font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 30px; color: var(--accent-color); }
+        .back-link::before { content: '←'; font-size: 1.1rem; transition: transform 0.2s ease; }
+        .back-link:hover::before { transform: translateX(-4px); }
+        .back-link:hover { color: var(--primary-color); }
+
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-header h1 { font-size: 2.5rem; font-weight: 400; margin-bottom: 15px; }
+        
+        .article-meta { display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 30px; }
+        .meta-category { font-weight: 600; color: var(--primary-color); }
+        
+        .article-hero-image { width: 100%; height: 400px; object-fit: cover; margin-bottom: 50px; background-color: #e0e6ed; }
+
+        /* Article Typography & Elements */
+        .article-content h2 { font-size: 1.8rem; margin-top: 50px; padding-bottom: 10px; border-bottom: 1px solid #eaeaea; }
+        .article-content h3 { font-size: 1.4rem; margin-top: 30px; }
+        .article-content ul, .article-content ol { margin-left: 20px; margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.05rem; }
+        .article-content li { margin-bottom: 10px; }
+        
+        blockquote { margin: 40px 0; padding: 20px 30px; border-left: 4px solid var(--primary-color); background-color: var(--bg-secondary); font-style: italic; font-size: 1.15rem; color: var(--primary-color); border-radius: 0 var(--border-radius) var(--border-radius) 0; }
+
+        /* Author Bio Box at the bottom */
+        .article-author-box { display: flex; gap: 20px; align-items: center; background-color: var(--bg-secondary); padding: 30px; border-radius: var(--border-radius); border: 1px solid #eaeaea; margin-top: 60px; }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+        .author-info h4 { margin-bottom: 5px; font-size: 1.1rem; }
+        .author-info p { margin-bottom: 0; font-size: 0.95rem; }
+
+        /* Footer */
+        footer { background-color: var(--primary-color); color: white; padding: 40px 20px; margin-top: auto; }
+        .footer-content { max-width: 1100px; margin: 0 auto; text-align: center; }
+        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; list-style: none; }
+        .footer-nav a { color: #d1d8e0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-nav a:hover { color: white; }
+        .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .article-header h1 { font-size: 2rem; }
+            .article-hero-image { height: 250px; }
+            .article-author-box { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Camelia-Gabriela Ionescu</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="projects.html">Projects & Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="projects.html" class="back-link">Back to Projects & Resources</a>
+
+        <article>
+            <div class="article-header">
+                <h1>Understanding Emotionally Focused Therapy (EFT)</h1>
+                <div class="article-meta">
+                    <span class="meta-category">Couples Therapy</span>
+                    <span>March 10, 2026</span>
+                    <span>5 Min Read</span>
+                </div>
+            </div>
+
+            <img src="https://via.placeholder.com/1200x600/f4f4f4/7f8c8d?text=Featured+Article+Image" alt="Abstract representation of connection" class="article-hero-image">
+
+            <div class="article-content">
+                <p>When couples find themselves stuck in repetitive, painful arguments, it can feel like they are speaking two entirely different languages. Often, these conflicts are not truly about the dishes, the finances, or the in-laws—they are about a deeper sense of disconnection.</p>
+                <p>Emotionally Focused Therapy (EFT) is a structured approach to couples therapy based on the science of adult attachment and bonding. Developed by Dr. Sue Johnson, EFT looks beneath the surface of anger and withdrawal to uncover the core emotional needs driving those behaviors.</p>
+
+                <h2>The Science of Attachment</h2>
+                <p>As human beings, we are wired for connection. Attachment theory teaches us that from the cradle to the grave, we need to know that there is someone we can depend on. In an adult relationship, when that secure bond feels threatened, our brains register it as a primal danger.</p>
+                
+                <blockquote>
+                    "The most functional way to regulate difficult emotions in love relationships is to share them." – Dr. Sue Johnson
+                </blockquote>
+
+                <p>When we feel disconnected from our partners, we tend to fall into one of two coping mechanisms:</p>
+                <ul>
+                    <li><strong>Pursuing:</strong> Criticizing, demanding, or expressing anger in a desperate attempt to get a response and re-establish connection.</li>
+                    <li><strong>Withdrawing:</strong> Shutting down, defending, or pulling away to protect oneself from perceived criticism or the overwhelming fear of getting it wrong.</li>
+                </ul>
+
+                <h2>How EFT Can Help</h2>
+                <p>In EFT, the goal is not simply to teach "better communication skills" or how to negotiate conflict. Instead, we work to map out the negative cycle that has taken over the relationship. We begin to see that the <em>cycle</em> is the enemy, not the partner.</p>
+                <p>Throughout our sessions, we will:</p>
+                <ol>
+                    <li>De-escalate the negative cycle and identify the deeper emotions (like fear, sadness, or shame) underneath the anger or silence.</li>
+                    <li>Help each partner express these softer emotions in a way that pulls the other partner closer, rather than pushing them away.</li>
+                    <li>Consolidate these new, secure ways of connecting so that the relationship becomes a safe haven once again.</li>
+                </ol>
+
+                <p>If you and your partner are feeling stuck in a cycle of conflict or distance, EFT provides a clear, evidence-based roadmap back to secure connection and deeper intimacy.</p>
+            </div>
+
+            <div class="article-author-box">
+                <img src="https://via.placeholder.com/150x150/f4f4f4/7f8c8d?text=Portrait" alt="Camelia-Gabriela Ionescu" class="author-avatar">
+                <div class="author-info">
+                    <h4>Written by Camelia-Gabriela Ionescu</h4>
+                    <p>Clinical Psychologist and certified EFT Psychotherapist. Passionate about helping individuals and couples build resilience, heal attachment wounds, and foster secure relationships.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-nav">
+                <li><a href="faq.html">Help/FAQ</a></li>
+                <li><a href="terms.html">T&C</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="privacy.html">Privacy & GDPR</a></li>
+                <li><a href="consumer.html">Consumer Info</a></li>
+            </ul>
+            <p class="copyright">&copy; 2026 Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+        </div>
+    </footer>
+
+</body>
+</html>
