@@ -28,6 +28,12 @@
         a:hover { color: var(--accent-color); }
         img { max-width: 100%; height: auto; display: block; }
 
+        /* Buttons & Interactive Elements */
+        .btn-primary { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 28px; border-radius: 4px; font-weight: 500; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: var(--accent-color); color: white; transform: translateY(-2px); }
+        .section-link { display: inline-flex; align-items: center; gap: 10px; color: var(--primary-color); }
+        .section-link:hover { color: var(--accent-color); }
+
         /* Navigation */
         header { background-color: var(--bg-color); padding: 20px 5%; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
@@ -38,7 +44,7 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
         /* Hero Banner */
-        .hero { background: #e0e6ed url('https://via.placeholder.com/1920x600/e0e6ed/7f8c8d?text=Hero+Banner+Image+Placeholder') no-repeat center center/cover; height: 60vh; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero { background: #e0e6ed url('./images/hero-banner.jpg') no-repeat center center/cover; height: 60vh; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; }
         .hero-content { background: rgba(255, 255, 255, 0.9); padding: 40px; border-radius: var(--border-radius); max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .hero h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 400; }
         .hero p { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0; }
@@ -49,9 +55,18 @@
         
         .services { padding: var(--spacing-lg) 0; background-color: var(--bg-secondary); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; margin-top: 40px; }
-        .service-card { background: var(--bg-color); padding: 40px 20px; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: center; transition: transform 0.3s ease; border: 1px solid #f0f0f0; }
-        .service-card:hover { transform: translateY(-5px); }
-        .service-card h3 { font-size: 1.25rem; margin-bottom: 15px; }
+        
+        /* Service Cards */
+        .service-card-link { text-decoration: none; color: inherit; display: block; transition: transform 0.3s ease; }
+        .service-card-link:hover { transform: translateY(-5px); text-decoration: none; color: inherit; }
+        .service-card { background: var(--bg-color); padding: 40px 20px; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: center; border: 1px solid #f0f0f0; height: 100%; display: flex; flex-direction: column; }
+        
+        /* UPDATED: Bolded Card Titles */
+        .service-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 15px; color: var(--primary-color); letter-spacing: 0.3px; }
+        
+        .service-card p { flex: 1; }
+        .card-action { display: inline-block; margin-top: 15px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent-color); transition: color 0.3s; }
+        .service-card-link:hover .card-action { color: var(--primary-color); }
 
         .bio { padding: var(--spacing-lg) 0; }
         .bio-wrapper { display: flex; align-items: center; gap: 60px; }
@@ -101,25 +116,37 @@
 
         <section class="welcome container">
             <h2>Welcome to a Safe Space</h2>
-            <p>Navigating life's challenges, emotional distress, or relationship disconnects can feel overwhelming. As a licensed psychologist with over 18 years of experience, I provide a compassionate, evidence-based environment to safely explore your emotions. By combining advanced psychometric assessment with emotionally attuned therapy, we will work collaboratively to translate complex patterns into clear, actionable guidance for your personal and relational healing.</p>
+            <p>Navigating life's challenges and relationship disconnects can feel overwhelming. With over <span class="years-experience">18</span> years of experience as a licensed psychologist, I provide a compassionate, evidence-based space to safely explore your inner world. By combining advanced psychometric assessment with emotionally attuned therapy, we work collaboratively to translate complex emotional patterns into clear, actionable guidance for lasting, positive change.</p>
         </section>
 
         <section class="services">
             <div class="container">
-                <h2>My Services</h2>
+                <h2><a href="services.html" class="section-link">My Services <span style="font-size: 0.8em;">&rarr;</span></a></h2>
+                
                 <div class="services-grid">
-                    <div class="service-card">
-                        <h3>Clinical Assessment</h3>
-                        <p>Comprehensive psychological evaluations to provide clarity on your mental health. This foundational step helps inform our therapeutic approach and tailor interventions specifically to your needs.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Single-Session Intervention</h3>
-                        <p>A focused, goal-oriented 50-90 minute encounter designed to address a single, pressing issue or difficult decision. A "one-at-a-time" approach giving you the support and momentum to move forward confidently.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Individual Psychotherapy</h3>
-                        <p>Tailored clinical support for anxiety, depression, trauma, and life transitions. We work together to unpack emotional blockages and foster a deeper sense of self-awareness and well-being.</p>
-                    </div>
+                    <a href="services.html" class="service-card-link">
+                        <div class="service-card">
+                            <h3>Clinical Assessment</h3>
+                            <p>Comprehensive psychological evaluations to provide clarity on your mental health. This foundational step helps inform our therapeutic approach and tailor interventions specifically to your needs.</p>
+                            <span class="card-action">See How I Can Help &rarr;</span>
+                        </div>
+                    </a>
+                    
+                    <a href="services.html" class="service-card-link">
+                        <div class="service-card">
+                            <h3>Single-Session Intervention</h3>
+                            <p>A focused, goal-oriented 50-90 minute encounter designed to address a single, pressing issue or difficult decision. This "one-at-a-time" approach gives you the support and momentum to move forward confidently.</p>
+                            <span class="card-action">See How I Can Help &rarr;</span>
+                        </div>
+                    </a>
+
+                    <a href="services.html" class="service-card-link">
+                        <div class="service-card">
+                            <h3>Individual Psychotherapy</h3>
+                            <p>Personalized psychological care for anxiety, depression, trauma, and life transitions. We work together to unpack emotional blockages and foster a deeper sense of self-awareness and well-being.</p>
+                            <span class="card-action">See How I Can Help &rarr;</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -131,10 +158,46 @@
                 </div>
                 <div class="bio-text">
                     <h2>Meet Camelia</h2>
-                    <p>I am a licensed Clinical Psychologist and certified Emotion-Focused Therapy (EFT) practitioner, with over 18 years of experience in the field of psychological testing, evaluation, and clinical profiling.</p>
+                    <p>I am a licensed Clinical Psychologist and certified Emotion-Focused Therapy (EFT) practitioner, with over <span class="years-experience">18</span> years of experience in the field of psychological testing, evaluation, and clinical profiling.</p>
                     <p>My professional journey has been defined by a commitment to bridging the gap between rigorous scientific psychometrics and empathetic, person-centered care.</p>
                     <p>By combining both, deep clinical insight with standardized psychometric tools, my practice empowers you to move beyond mere symptom relief—equipping you with the emotional tools to understand your patterns, build lasting resilience, and lead a more authentic, connected life.</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="bio.html" class="btn-primary">Read Full Bio & Credentials</a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-nav">
+                <li><a href="faq.html">Help/FAQ</a></li>
+                <li><a href="terms.html">T&C</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="privacy.html">Privacy & GDPR</a></li>
+                <li><a href="consumer.html">Consumer Info</a></li>
+            </ul>
+            <p class="copyright">&copy; <span id="current-year">2026</span> Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            
+            const startYear = 2008; 
+            const expElements = document.querySelectorAll('.years-experience');
+            expElements.forEach(function(el) {
+                el.textContent = currentYear - startYear;
+            });
+
+            const copyrightElement = document.getElementById('current-year');
+            if (copyrightElement) {
+                copyrightElement.textContent = currentYear;
+            }
+        });
+    </script>
+</body>
+</html>
