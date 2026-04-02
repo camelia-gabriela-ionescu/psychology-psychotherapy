@@ -100,14 +100,15 @@
         <div class="bio-container">
             
             <aside class="bio-sidebar">
-                <img src="https://via.placeholder.com/600x750/f4f4f4/7f8c8d?text=Portrait+Photo" alt="Camelia-Gabriela Ionescu" class="bio-image">
+                <img src="images/camelia-portrait-3.jpg" alt="Camelia-Gabriela Ionescu" class="bio-image">
                 
                 <div class="credentials-box">
                     <h3>Credentials & Affiliations</h3>
                     <ul>
-                        <li>Licensed Clinical Psychologist (Colegiul Psihologilor din România)</li>
-                        <li>Certified Emotionally Focused Therapist (EFT)</li>
-                        <li>Member of the International Centre for Excellence in Emotionally Focused Therapy (ICEEFT)</li>
+                        <li>Registered Psychologist with the Romanian College of Psychologists (Reg. No. 10399)</li>
+                        <li>Licensed Clinical Psychologist</li>
+                        <li>Certified Emotion-Focused Therapist (Level A) - Romanian Institute for Emotion-Focused Therapy (IPEFE)</li>
+                        <li>Member of the International Society for Emotion-Focused Therapy (isEFT)</li>
                         <li>Master's Degree in Clinical Psychology and Psychotherapy</li>
                     </ul>
                 </div>
@@ -115,12 +116,12 @@
 
             <div class="bio-content">
                 <h2>My Professional Journey</h2>
-                <p>Hello, and welcome. I am Camelia-Gabriela Ionescu, a licensed Clinical Psychologist and psychotherapist practicing in Romania. My journey into the field of psychology was driven by a profound curiosity about human resilience and the intricate ways our early relationships shape our adult lives.</p>
-                <p>I completed my formal education with a focus on clinical assessment and evidence-based interventions. Over the years, I have had the privilege of working with individuals and couples navigating a wide spectrum of emotional difficulties, from acute anxiety and depression to profound relational disconnects and trauma.</p>
+                <p>Hello, and welcome. I am Camelia-Gabriela Ionescu, a licensed Clinical Psychologist and Psychotherapist practicing in Romania. I have always had a 'detective's curiosity' about the inner worlds of people. My fascination with the motives behind our actions made me feel very much at home studying psychology, and I approach psychotherapy with that same methodical precision and care.</p>
+                <p>I focus on clinical assessment and evidence-based interventions to help others understand their own 'whys.' For me, therapy is about creating meaning and mapping the journey from early relationships to adult resilience.</p>
 
                 <h2>My Therapeutic Philosophy</h2>
                 <p>I believe that healing does not happen in isolation. We are fundamentally social beings, wired for connection. When those connections are threatened or broken, we experience deep psychological distress. This belief is the cornerstone of my practice.</p>
-                <p>My therapeutic approach is deeply grounded in <strong>Attachment Theory</strong>. I specialize in <strong>Emotionally Focused Therapy (EFT)</strong>, an empirically validated model that looks beneath the surface of behavioral symptoms to address the core emotional needs and attachment fears driving them. Rather than simply teaching you how to "manage" your symptoms or "argue better" with your partner, my goal is to help you restructure your emotional responses and build secure, lasting bonds.</p>
+                <p>My therapeutic approach is deeply grounded in <strong>Attachment Theory</strong>. I specialize in <strong>Emotion-Focused Therapy (EFT)</strong>, an empirically validated model that looks beneath the surface of behavioral symptoms to address the core emotional needs and attachment fears driving them. Rather than simply teaching you how to "manage" your symptoms or "argue better" with your partner, my goal is to help you restructure your emotional responses and build secure, lasting bonds.</p>
 
                 <h2>What to Expect in Our Sessions</h2>
                 <p>Entering therapy can feel daunting, but you will not be navigating it alone. I strive to create an environment that is warm, entirely non-judgmental, and collaboratively paced. My role is not to "fix" you, but to act as a secure base and a guide as we map out your emotional landscape together.</p>
@@ -143,9 +144,25 @@
                 <li><a href="privacy.html">Privacy & GDPR</a></li>
                 <li><a href="consumer.html">Consumer Info</a></li>
             </ul>
-            <p class="copyright">&copy; 2026 Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+                        <p class="copyright">&copy; <span id="current-year">2026</span> Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            
+            const startYear = 2008; 
+            const expElements = document.querySelectorAll('.years-experience');
+            expElements.forEach(function(el) {
+                el.textContent = currentYear - startYear;
+            });
+
+            const copyrightElement = document.getElementById('current-year');
+            if (copyrightElement) {
+                copyrightElement.textContent = currentYear;
+            }
+        });
+    </script>
 </body>
 </html>
