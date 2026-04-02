@@ -46,10 +46,33 @@
         textarea.form-control { resize: vertical; min-height: 150px; }
         
         /* Buttons */
-        .btn { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 25px; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; transition: background 0.3s; width: 100%; font-weight: 500; }
-        .btn:hover { background-color: var(--accent-color); color: white; }
-        .btn-outline { background-color: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); margin-top: 15px; text-align: center; }
-        .btn-outline:hover { background-color: var(--primary-color); color: white; }
+       /* Buttons */
+        .btn { 
+            display: inline-block; 
+            background-color: var(--primary-color); /* Dark Blue */
+            color: white; 
+            padding: 12px 25px; 
+            border: 1px solid var(--primary-color); 
+            border-radius: 4px; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            width: 100%; 
+            font-weight: 500; 
+            text-align: center;
+        }
+
+        /* Hover state: Turns white/light with dark text */
+        .btn:hover { 
+            background-color: transparent; 
+            color: var(--primary-color); 
+        }
+
+        /* Removing the specific .btn-outline logic since you want them all the same now */
+        .btn-outline { 
+            background-color: var(--primary-color); 
+            color: white; 
+        }
 
         /* Info Box Styles */
         .info-section { margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
@@ -140,7 +163,7 @@
                 <div class="info-section">
                     <h3>Professional Network</h3>
                     <p>I frequently share psychological insights, mental health advocacy, and professional updates on LinkedIn. Let's connect.</p>
-                    <a href="https://www.linkedin.com/in/cameliagionescu/" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/cameliagionescu/" target="_blank" class="btn">Connect on LinkedIn</a>
                 </div>
 
                 <div class="info-section">
