@@ -92,65 +92,69 @@
             <p>Reach out to schedule a consultation, ask a question, or connect professionally.</p>
         </div>
 
-       <section id="contact" class="contact-section">
-    <div class="container">
-        <h2>Contact Me</h2>
-        <p>If you'd like to schedule a session or have any questions, please fill out the form below.</p>
-
-        <form action="https://formspree.io/f/mqegdeal" method="POST" class="contact-form">
+        <div class="contact-grid">
             
-            <div class="form-group">
-                <label for="full-name">Full Name</label>
-                <input type="text" name="name" id="full-name" placeholder="Your name" class="form-control" required>
+            <div class="form-box">
+                <h2>Contact Me</h2>
+                <p>If you'd like to schedule a session or have any questions, please fill out the form below.</p>
+
+                <form action="https://formspree.io/f/mqegdeal" method="POST">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" name="name" id="full-name" placeholder="Your name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-address">Email Address</label>
+                        <input type="email" name="email" id="email-address" placeholder="email@example.com" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">How can I help you?</label>
+                        <select name="service" id="service" class="form-control" required>
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="Assessment">Assessment</option>
+                            <option value="Intervention">Intervention</option>
+                            <option value="Psychotherapy">Psychotherapy</option>
+                            <option value="Other request">Other request</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="_subject" id="subject" placeholder="e.g., Scheduling an appointment" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Your message here..." class="form-control" required></textarea>
+                    </div>
+
+                    <input type="hidden" name="_next" value="https://talktocamelia.com/thanks.html">
+
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="email-address">Email Address</label>
-                <input type="email" name="email" id="email-address" placeholder="email@example.com" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-                <label for="service">How can I help you?</label>
-                <select name="service" id="service" class="form-control" required>
-                    <option value="" disabled selected>Select an option...</option>
-                    <option value="Assessment">Assessment</option>
-                    <option value="Intervention">Intervention</option>
-                    <option value="Psychotherapy">Psychotherapy</option>
-                    <option value="Other request">Other request</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" name="_subject" id="subject" placeholder="e.g., Scheduling an appointment" class="form-control" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="5" placeholder="Your message here..." class="form-control" required></textarea>
-            </div>
-
-            <input type="hidden" name="_next" value="https://talktocamelia.com/thanks.html">
-
-            <button type="submit" class="btn-primary">Send Message</button>
-        </form>
-    </div>
-</section>
 
             <div class="info-box">
                 <div class="info-section">
                     <h3>Professional Network</h3>
                     <p>I frequently share psychological insights, mental health advocacy, and professional updates on LinkedIn. Let's connect.</p>
-                    <a href="https://linkedin.com/camelia.g.ionescu" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/cameliagionescu/" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
                 </div>
 
                 <div class="info-section">
-                    <h3>Stay in the Loop</h3>
-                    <p>Subscribe to my newsletter to receive periodic updates on new blog resources, workshops, and mental wellness tips directly to your inbox.</p>
-                    <form action="#" method="POST">
+                    <h3>Keep in Touch</h3>
+                     <p>Subscribe to my newsletter to receive periodic updates on new blog resources, workshops, and mental wellness tips directly to your inbox.</p>
+    
+                    <form action="https://formspree.io/f/mbdpadar" method="POST">
                         <div class="form-group">
-                            <input type="email" placeholder="Your email address" class="form-control" required>
+                            <input type="email" name="email" placeholder="Your email address" class="form-control" required>
                         </div>
+                        
+                        <input type="hidden" name="_subject" value="New Newsletter Subscription">
+                        <input type="hidden" name="_next" value="https://talktocamelia.com/thanks.html">
+                        
                         <button type="submit" class="btn">Subscribe</button>
                     </form>
                 </div>
@@ -160,6 +164,7 @@
                     <p style="font-size: 0.85rem;"><em>Please note: I do not provide emergency crisis services. If you are experiencing a mental health emergency, please dial 112 (in Romania) or visit your nearest emergency room immediately.</em></p>
                 </div>
             </div>
+
         </div>
     </main>
 
