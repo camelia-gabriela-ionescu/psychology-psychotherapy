@@ -92,36 +92,56 @@
             <p>Reach out to schedule a consultation, ask a question, or connect professionally.</p>
         </div>
 
-        <div class="contact-grid">
-            <div class="form-box">
-                <h2>Send a Message</h2>
-                <p style="margin-bottom: 25px; font-size: 0.95rem;">Please fill out the form below. I aim to respond to all inquiries within 48 business hours.</p>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+       <section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p>If you'd like to schedule a session or have any questions, please fill out the form below.</p>
+
+        <form action="https://formspree.io/f/mqegdeal" method="POST" class="contact-form">
+            
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" name="name" id="full-name" placeholder="Your name" class="form-control" required>
             </div>
+
+            <div class="form-group">
+                <label for="email-address">Email Address</label>
+                <input type="email" name="email" id="email-address" placeholder="email@example.com" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">How can I help you?</label>
+                <select name="service" id="service" class="form-control" required>
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="Assessment">Assessment</option>
+                    <option value="Intervention">Intervention</option>
+                    <option value="Psychotherapy">Psychotherapy</option>
+                    <option value="Other request">Other request</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" name="_subject" id="subject" placeholder="e.g., Scheduling an appointment" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="5" placeholder="Your message here..." class="form-control" required></textarea>
+            </div>
+
+            <input type="hidden" name="_next" value="https://talktocamelia.com/thanks.html">
+
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </div>
+</section>
 
             <div class="info-box">
                 <div class="info-section">
                     <h3>Professional Network</h3>
                     <p>I frequently share psychological insights, mental health advocacy, and professional updates on LinkedIn. Let's connect.</p>
-                    <a href="https://linkedin.com/" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+                    <a href="https://linkedin.com/camelia.g.ionescu" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
                 </div>
 
                 <div class="info-section">
@@ -152,9 +172,25 @@
                 <li><a href="privacy.html">Privacy & GDPR</a></li>
                 <li><a href="consumer.html">Consumer Info</a></li>
             </ul>
-            <p class="copyright">&copy; 2026 Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+                      <p class="copyright">&copy; <span id="current-year">2026</span> Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            
+            const startYear = 2008; 
+            const expElements = document.querySelectorAll('.years-experience');
+            expElements.forEach(function(el) {
+                el.textContent = currentYear - startYear;
+            });
+
+            const copyrightElement = document.getElementById('current-year');
+            if (copyrightElement) {
+                copyrightElement.textContent = currentYear;
+            }
+        });
+    </script>
 </body>
 </html>
