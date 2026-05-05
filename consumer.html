@@ -92,7 +92,7 @@
         <p class="last-updated">Last Updated: May 2026</p>
 
         <h2>1. Commitment to Quality of Care</h2>
-        <p>As a licensed clinical psychologist in Romania, my practice is strictly governed by the ethical codes, professional standards, and regulations set forth by the <strong>Colegiul Psihologilor din România</strong> (Romanian Board of Psychologists). I am committed to providing the highest quality of evidence-based psychological care and maintaining complete transparency regarding my services and fees.</p>
+        <p>As a licensed clinical psychologist in Romania, my practice is strictly governed by the ethical codes, professional standards, and regulations set forth by the <strong>Colegiul Psihologilor din România</strong> <a href="https://www.copsi.ro/index.php/" >Colegiul Psihologilor din România</a>(Romanian Board of Psychologists). I am committed to providing the highest quality of evidence-based psychological care and maintaining complete transparency regarding my services and fees.</p>
         <p>If you have any concerns, questions, or complaints regarding the services provided, I highly encourage you to address them directly with me first. Open communication is a vital part of the therapeutic process, and I am committed to resolving any misunderstandings amicably.</p>
 
         <h2>2. Consumer Protection (ANPC)</h2>
@@ -106,7 +106,7 @@
         </div>
 
         <h2>3. Professional Disputes</h2>
-        <p>Please note that complaints regarding strictly <em>clinical</em> or <em>ethical</em> psychological practices (e.g., breaches of confidentiality, professional misconduct) fall under the jurisdiction of the <strong>Colegiul Psihologilor din România</strong><a href="https://www.copsi.ro/index.php/comisii/comisia-de-deontologie-si-disciplina" >copsi.ro</a>. For matters pertaining to commercial aspects (e.g., billing, clear display of fees), the ANPC holds jurisdiction.</p>
+        <p>Please note that complaints regarding strictly <em>clinical</em> or <em>ethical</em> psychological practices (e.g., breaches of confidentiality, professional misconduct) fall under the jurisdiction of the <a href="https://www.copsi.ro/index.php/comisii/comisia-de-deontologie-si-disciplina" >Colegiul Psihologilor din România</a>. For matters pertaining to commercial aspects (e.g., billing, clear display of fees), the ANPC holds jurisdiction.</p>
 
     </main>
 
@@ -119,9 +119,25 @@
                 <li><a href="privacy.html">Privacy & GDPR</a></li>
                 <li><a href="consumer.html">Consumer Info</a></li>
             </ul>
-            <p class="copyright">&copy; 2026 Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
+            <p class="copyright">&copy; <span id="current-year">2026</span> Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            
+            const startYear = 2008; 
+            const expElements = document.querySelectorAll('.years-experience');
+            expElements.forEach(function(el) {
+                el.textContent = currentYear - startYear;
+            });
+
+            const copyrightElement = document.getElementById('current-year');
+            if (copyrightElement) {
+                copyrightElement.textContent = currentYear;
+            }
+        });
+    </script>
 </body>
 </html>
