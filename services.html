@@ -64,14 +64,32 @@
         .footer-nav a:hover { color: white; }
         .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .service-block, .service-block:nth-child(even) { flex-direction: column; gap: 30px; text-align: center; }
-            .service-text h2 { text-align: center; }
-            .service-text ul { text-align: left; display: inline-block; }
-            .page-header h1 { font-size: 2rem; }
-        }
+       @media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    
+    /* Changed text-align to left and removed center alignment */
+    .service-block, .service-block:nth-child(even) { 
+        flex-direction: column; 
+        gap: 30px; 
+        text-align: left; 
+        align-items: flex-start; 
+    }
+    
+    .service-text h2 { text-align: left; }
+    
+    /* Ensures the list takes up full width instead of shrinking to fit */
+    .service-text ul { 
+        text-align: left; 
+        display: block; 
+        width: 100%;
+    }
+    
+    .page-header h1 { font-size: 2rem; }
+    
+    /* Keeps the button centered since CTA usually looks better that way */
+    .cta-section { text-align: center; } 
+}
     </style>
 </head>
 <body>
@@ -137,7 +155,7 @@
                 <h2>Clinical Assessment & Psychodiagnostics</h2>
                 <p>Just as a map is essential for a journey, a psychological assessment is essential for effective therapy. It prevents "guessing" and replaces it with "knowing." Assessment enables:</p>
                 <ul>
-                    <li>Diagnostic precision (e.g.  if it’s anxiety, depression, trauma, or a combination)/li>
+                    <li>Diagnostic precision (e.g.  if it’s anxiety, depression, trauma, or a combination)</li>
                     <li>Safety & foundation (ensuring that you feel secure before diving into deep emotional work)</li>
                     <li>Growth tracking (using baseline data to prove that the work we are doing together is actually helping)</li>
                 </ul>
