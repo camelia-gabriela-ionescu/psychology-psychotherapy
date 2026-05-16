@@ -65,19 +65,40 @@
         .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .service-block, .service-block:nth-child(even) { 
-                flex-direction: column; 
-                gap: 30px; 
-                text-align: left; 
-                align-items: flex-start; 
-            }
-            .service-text h2 { text-align: left; }
-            .service-text ul { text-align: left; display: block; width: 100%; }
-            .page-header h1 { font-size: 2rem; }
-            .cta-section { text-align: center; } 
-        }
+    header { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    
+    /* Ensures the row wraps cleanly and isolates elements on mobile */
+    .service-block, .service-block:nth-child(even) { 
+        flex-direction: column; 
+        gap: 30px; 
+        text-align: left; 
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 15px; /* Adds balanced breathing room on the left and right */
+    }
+    
+    .service-image {
+        width: 100%; /* Prevents the image from overflowing the screen boundary */
+    }
+
+    .service-text { 
+        width: 100%; /* Ensures text expands fully but remains within borders */
+    }
+
+    .service-text h2 { text-align: left; }
+    
+    .service-text ul { 
+        text-align: left; 
+        display: block; 
+        width: 100%;
+        margin-left: 20px; /* Ensures list bullets don't clip */
+        padding-right: 15px; /* Double-guards the right margin text wrap */
+    }
+    
+    .page-header h1 { font-size: 2rem; }
+    .cta-section { text-align: center; } 
+}
     </style>
 </head>
 <body>
@@ -107,15 +128,17 @@
                 <img src="images/evaluare.jpg" alt="Clinical Assessment & Psychodiagnostics">
             </div>
             <div class="service-text">
-                <h2>Clinical Assessment & Psychodiagnostics</h2>
-                <p>Just as a map is essential for a journey, a psychological assessment is essential for effective therapy. It prevents "guessing" and replaces it with "knowing." Assessment enables:</p>
+                <h2>Psychodiagnostics & Clinical Assessment</h2>
+                <p>Just as a map is essential for a journey, a psychological assessment is essential for effective therapy. It prevents "guessing" and replaces it with "knowing".</p>
+                <p>Assessment enables:</p>
 
                 <ul>
-                    <li>Diagnostic precision: is it anxiety, depression, trauma, or a combination of factors.</li>
+                    <li>Diagnostic precision: is it anxiety, depression or trauma, or is it a combination of factors?</li>
                     <li>Safety & foundation: ensuring you feel secure before diving into deep emotional work.</li>
                     <li>Growth tracking: using baseline data to prove that the work we are doing together is actually helping.</li>
                 </ul>
-                <p>The process involves a Observation, Clinical Interview regarding your history, Psychometric Testing, and a Feedback Session to integrate findings. It is the most direct path toward valid, targeted treatment and self-discovery. I also provide specialized evaluations for Psychodiagnostics, IQ, Aptitude testing, Psychoeducation, Self-Discovery & Development.</p>
+                <p>The process involves a Observation, Clinical Interview regarding your history, Psychometric Testing, and a Feedback Session to integrate findings. It is the most direct path toward valid, targeted treatment.</p>
+                <p>I also provide specialized evaluations for Psychodiagnostics, IQ, Aptitude testing, Psychoeducation, Self-Discovery & Development.</p>
             </div>
         </div>
 
@@ -126,7 +149,8 @@
             <div class="service-text">
                 <h2>Single-Session Intervention</h2>
                 <p>A Single-Session Intervention is an intentional, focused encounter designed to address a specific concern in one meeting. Lasting approximately 90 minutes, this "one-at-a-time" approach is a purposeful endeavor, not a shortcut. Through a thorough pre-evaluation, we lay the groundwork before our meeting, ensuring our time is dedicated entirely to providing the help you need in the moment.</p>
-                <p>While designed as a standalone session, this type of session is consensual and flexible-knowing that further help is always available if required. It is a way of thinking that honors your preferences, focuses on immediate clarity, and respects your time, providing a meaningful therapeutic contact that starts and ends with your specific goal. By choosing a single-session intervention, you can:</p>
+                <p>While designed as a standalone session, this type of session is consensual and flexible-knowing that further help is always available if required. It is a way of thinking that honors your preferences, focuses on immediate clarity, and respects your time, providing a meaningful therapeutic contact that starts and ends with your specific goal.</p> 
+                <p>By choosing a single-session intervention, you can:</p>
                 <ul>
                     <li>Gain clarity while at a crossroads in your career, education or personal life.</li>
                     <li>Create an immediate ”toolkit” for a specific challenge.</li>

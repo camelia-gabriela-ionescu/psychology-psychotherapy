@@ -83,10 +83,17 @@
         .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .bio-wrapper { flex-direction: column; }
+            
+            /* ADDED: padding and alignment fix for the bio section on mobile */
+            .bio-wrapper { 
+                flex-direction: column; 
+                padding: 0 15px; 
+                text-align: left;
+            }
+            
             .hero h1 { font-size: 2rem; }
         }
     </style>
@@ -110,13 +117,13 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Find Clarity & Connection</h1>
-                <p>Clinical Psychology & Emotion-Focused Therapy (EFT)</p>
+                <p>Assessment, Clinical Psychology & Emotion-Focused Therapy (EFT)</p>
             </div>
         </section>
 
         <section class="welcome container">
             <h2>Welcome to a Safe Space</h2>
-            <p>Navigating life's challenges and relationship disconnects can feel overwhelming. With over <span class="years-experience">18</span> years of experience as a licensed psychologist, I provide a compassionate, evidence-based space to safely explore your inner world. By combining advanced psychometric assessment with emotionally attuned therapy, we work collaboratively to translate complex emotional patterns into clear, actionable guidance for lasting, positive change.</p>
+            <p>Navigating life's challenges and relationship disconnects can feel overwhelming. With over <span class="years-experience">18</span> years of experience as a licensed psychologist, I provide a compassionate, evidence-based space to safely explore your challenges and inner world. By combining advanced psychometric assessment with emotionally attuned therapy, we work collaboratively to translate complex emotional patterns into clear, actionable guidance for lasting, positive change.</p>
         </section>
 
         <section class="services">
@@ -126,7 +133,7 @@
                 <div class="services-grid">
                     <a href="services.html" class="service-card-link">
                         <div class="service-card">
-                            <h3>Clinical Assessment</h3>
+                            <h3>Psychodiagnostic & Clinical Assessment</h3>
                             <p>Comprehensive psychological evaluations to provide clarity on your mental health. This foundational step helps inform our therapeutic approach and tailor interventions specifically to your needs.</p>
                             <span class="card-action">See How I Can Help &rarr;</span>
                         </div>
@@ -135,7 +142,7 @@
                     <a href="services.html" class="service-card-link">
                         <div class="service-card">
                             <h3>Single-Session Intervention</h3>
-                            <p>A focused, goal-oriented 50-90 minute encounter designed to address a single, pressing issue or difficult decision. This "one-at-a-time" approach gives you the support and momentum to move forward confidently.</p>
+                            <p>A focused, goal-oriented 90 minute encounter designed to address a single, pressing issue or difficult decision. This "one-at-a-time" approach gives you the support and momentum to move forward confidently.</p>
                             <span class="card-action">See How I Can Help &rarr;</span>
                         </div>
                     </a>
@@ -143,7 +150,7 @@
                     <a href="services.html" class="service-card-link">
                         <div class="service-card">
                             <h3>Individual Psychotherapy</h3>
-                            <p>Personalized psychological care for anxiety, depression, trauma, and life transitions. We work together to unpack emotional blockages and foster a deeper sense of self-awareness and well-being.</p>
+                            <p>Personalized psychological care for anxiety, depression, trauma, and life transitions. We work together to unpack emotional blockages and foster agency and wellbeing.</p>
                             <span class="card-action">See How I Can Help &rarr;</span>
                         </div>
                     </a>
