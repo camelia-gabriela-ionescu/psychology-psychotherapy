@@ -83,14 +83,19 @@
         .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
 
         /* Responsive Design */
-         @media (max-width: 768px) {
+        @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
             nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
             
-            /* ADDED: padding and alignment fix for the bio section on mobile */
+            /* FIX: Adds a universal 20px padding to all containers on mobile */
+            .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                width: 100%;
+            }
+
             .bio-wrapper { 
                 flex-direction: column; 
-                padding: 0 15px; 
                 text-align: left;
             }
             
@@ -133,8 +138,7 @@
                 <div class="services-grid">
                     <a href="services.html" class="service-card-link">
                         <div class="service-card">
-                            <h3>Psychodiagnostic & </h3>
-                            <h3>Clinical Assessment</h3>
+                            <h3>Psychological Assessment</h3>
                             <p>Comprehensive psychological evaluations to provide clarity on your mental health and overall functioning. This foundational step helps inform our therapeutic approach and tailor interventions specifically to your needs.</p>
                             <span class="card-action">See How I Can Help &rarr;</span>
                         </div>
@@ -168,7 +172,7 @@
                     <h2>Meet Camelia</h2>
                     <p>I am a licensed Clinical Psychologist and certified Emotion-Focused Therapy (EFT) practitioner, with over <span class="years-experience">18</span> years of experience in the field of psychological testing, evaluation, and clinical profiling.</p>
                     <p>My professional journey has been defined by a commitment to bridging the gap between rigorous scientific psychometrics and empathetic, person-centered care.</p>
-                    <p>By combining both, deep clinical insight with standardized psychometric tools, my practice empowers you to move beyond mere symptom relief—equipping you with the emotional tools to understand your patterns, build lasting resilience, and lead a more authentic, connected life.</p>
+                    <p>By combining both, deep clinical insight with standardized psychometric tools, my practice empowers you to move beyond mere symptom relief - equipping you with the emotional tools to understand your patterns, build lasting resilience, and lead a more authentic, connected life.</p>
                     
                     <div style="margin-top: 30px;">
                         <a href="bio.html" class="btn-primary">Read Full Bio & Credentials</a>
