@@ -1,281 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Emotion-Focused Therapy (EFT) | Camelia-Gabriela Ionescu</title>
-    <style>
-        /* Shared CSS Variables and Base Styles */
-        :root {
-            --primary-color: #2c3e50; 
-            --accent-color: #7f8c8d; 
-            --bg-color: #ffffff; 
-            --bg-secondary: #f9fbfb; 
-            --text-main: #333333;
-            --text-light: #444444; 
-            --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            --spacing-lg: 80px;
-            --border-radius: 8px;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: var(--font-main); color: var(--text-main); background-color: var(--bg-color); line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; }
-        h1, h2, h3, h4 { color: var(--primary-color); font-weight: 300; line-height: 1.3; margin-bottom: 20px; }
-        p { margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.05rem; }
-        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s ease; }
-        a:hover { color: var(--accent-color); }
-        img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius); }
-
-        /* Navigation */
-        header { background-color: var(--bg-color); padding: 20px 5%; border-bottom: 1px solid #eaeaea; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        nav ul { list-style: none; display: flex; gap: 30px; }
-        nav a { font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
-
-        /* Article Layout */
-        main { flex: 1; padding: 60px 20px; max-width: 800px; margin: 0 auto; width: 100%; }
-        
-        .back-link { display: inline-flex; align-items: center; gap: 5px; font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 30px; color: var(--accent-color); }
-        .back-link::before { content: '←'; font-size: 1.1rem; transition: transform 0.2s ease; }
-        .back-link:hover::before { transform: translateX(-4px); }
-        .back-link:hover { color: var(--primary-color); }
-
-        .article-header { margin-bottom: 40px; text-align: center; }
-        .article-header h1 { font-size: 2.5rem; font-weight: 400; margin-bottom: 15px; }
-        
-        .article-meta { display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 30px; }
-        .meta-category { font-weight: 600; color: var(--primary-color); }
-        
-        .article-hero-image { width: 100%; height: 400px; object-fit: cover; margin-bottom: 50px; background-color: #e0e6ed; }
-
-        /* Article Typography & Elements */
-        .article-content h2 { font-size: 1.8rem; margin-top: 50px; padding-bottom: 10px; border-bottom: 1px solid #eaeaea; }
-        .article-content h3 { font-size: 1.4rem; margin-top: 30px; }
-        .article-content ul, .article-content ol { margin-left: 20px; margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.05rem; }
-        .article-content li { margin-bottom: 10px; }
-        
-        blockquote { margin: 40px 0; padding: 20px 30px; border-left: 4px solid var(--primary-color); background-color: var(--bg-secondary); font-style: italic; font-size: 1.15rem; color: var(--primary-color); border-radius: 0 var(--border-radius) var(--border-radius) 0; }
-
-        /* Author Bio Box at the bottom */
-        .article-author-box { display: flex; gap: 20px; align-items: center; background-color: var(--bg-secondary); padding: 30px; border-radius: var(--border-radius); border: 1px solid #eaeaea; margin-top: 60px; }
-        .author-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
-        .author-info h4 { margin-bottom: 5px; font-size: 1.1rem; }
-        .author-info p { margin-bottom: 0; font-size: 0.95rem; }
-
-        /* Emotion Glossary Cassette */
-        .emotion-cassette {
-            background-color: var(--bg-secondary);
-            border: 1px solid #eaeaea;
-            border-radius: var(--border-radius);
-            padding: 35px;
-            margin: 40px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-        }
-        .emotion-cassette h3 {
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--accent-color);
-            color: var(--primary-color);
-        }
-        .emotion-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 4px solid var(--primary-color);
-        }
-        .emotion-item:last-child {
-            margin-bottom: 0;
-        }
-        .emotion-term {
-            display: block;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            letter-spacing: 0.3px;
-        }
-        .emotion-def {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer { background-color: var(--primary-color); color: white; padding: 40px 20px; margin-top: auto; }
-        .footer-content { max-width: 1100px; margin: 0 auto; text-align: center; }
-        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; list-style: none; }
-        .footer-nav a { color: #d1d8e0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .footer-nav a:hover { color: white; }
-        .copyright { color: #a5b1c2; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .article-header h1 { font-size: 2rem; }
-            .article-hero-image { height: 250px; }
-            .article-author-box { flex-direction: column; text-align: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <a href="index.html" class="logo">Camelia-Gabriela Ionescu</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="projects.html">Projects & Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <a href="projects.html" class="back-link">Back to Projects & Resources</a>
-
-        <article>
-            <div class="article-header">
-                <h1>Understanding Emotion-Focused Therapy (EFT)</h1>
-                <div class="article-meta">
-                    <span class="meta-category">Therapy</span>
-                    <span>May 10, 2026</span>
-                    <span>10 Min Read</span>
-                </div>
-            </div>
-
-            <img src="images/articol-1200-600-1.jpg" alt="Abstract representation of therapy" class="article-hero-image">
-
-            <div class="article-content">
-                <p>EFT is an evidence-based approach that views emotions as the primary drivers of change. Discover how you can use EFT to replace old, destructive patterns with more resilient ways of responding to the world.</p>
-
-                <h2>Intro - emotions as underlying drivers of behaviour</h2>
-                <p>Why do you feel paralyzed by a work email? Why do you snap at your partner over the dishes in the sink? Why do you suddenly become sad when there’s no apparent cause? You might be overreacting to the same old triggers, or you might become so overwhelmed that you do everything in your power to avoid that experience. Looking for the logic behind it, you might struggle to pinpoint the rational reason for all your hyper- or hyporeactions. At the end of the day, you get ”hijacked” by your own mood. Depending on how long this has been going on, it can range from annoying and frustrating to devastatingly impairing - otherwise, you wouldn’t be reading this article.</p>
-                <p>A major part of the solution is to stop searching for the logic behind your behaviors, and instead start looking at your experience through the lens of your emotions. According to Emotion-Focused Therapy (EFT), emotions are the fundamental drivers of your experience, and they are always trying to tell you something. If you don’t stop and listen soon, the quality of your life will continue to suffer.</p>
-
-                <h2>EFT history - from outer space to inner worlds</h2>
-                <p>Quite a while ago (the '80s), a special breed of therapists started to gather scientific evidence toward something other than thoughts and behaviors (as in Cognitive-Behavioral Therapy - CBT, that was indeed helpful up to a point, but incomplete). A former nuclear physicist engineer, named Leslie Greenberg, found his calling in psychotherapy research and practice where he was preoccupied with how change could be best facilitated in therapy. Teaming up with another clinician, named Sue Johnson, they studied the process in numerous sessions, noticing that clients who were engaged emotionally changed more. Although their interests followed different routes, creating two different branches of EFT: Dr. Greenberg’s EFTe Emotion-Focused Therapy and Dr. Johnson’s EFTa Emotionally Focused Therapy, with EFTe focusing on emotion (in individuals) and EFTa on attachment (in couples), their work brought the world a functioning emotion model in psychotherapy.</p>
-
-                <h2>Emotions at the center of human functioning and healing</h2>
-                <p>The EFTe methodology is built on the premise that emotions are naturally adaptive and serve to inform needs and direct action (<a href="resources/emotion-to-needs-eft-worksheet-2026.pdf" target="_blank" rel="noopener noreferrer">here’s free access to the worksheet I have specifically designed on this topic</a>). Due to past emotional injuries, or just by being taught to dismiss them, emotions can also become maladaptive.[cite: 2] Therefore, EFTe focuses on helping you identify, experience, and transform maladaptive emotional states by accessing more adaptive, primary emotions.[cite: 2] If you imagine a timeline, primary adaptive emotions are the healthy first reactions to an event and primary maladaptive emotions are the unhealthy gut reactions triggered by the event, but learned from past wounds or trauma, while secondary emotions come after on the timeline, as reactions to shield the primary emotions that are perceived as unsafe.[cite: 2] Instrumental emotions are a tool-type category of emotions in this model, and serve to gain leverage over someone; they are not genuine.[cite: 2] As you have already guessed, only primary adaptive emotions offer healthy guidance, informing us about our wants, needs, and action tendencies adequate to the moment (here’s free access to more in-depth, practical info about the types of emotions in EFTe – if you do not have time, you can just use the essential definitions in the cassette).[cite: 2]</p>
-                <div class="emotion-cassette">
-    <h3>The EFTe Emotion Categories</h3>
-    
-                <div class="emotion-item">
-                    <span class="emotion-term">Primary emotions</span>
-                    <p class="emotion-def">Instant gut reactions, can be adaptive or maladaptive.</p>
-                </div>
-                
-                <div class="emotion-item">
-                    <span class="emotion-term">Adaptive emotions</span>
-                    <p class="emotion-def">Naturally fitting and appropriate responses to the current situation (e.g., feeling happy you got a raise, feeling sad because a close relative passed away, feeling fear when you hear a large animal in the forest).</p>
-                </div>
-                
-                <div class="emotion-item">
-                    <span class="emotion-term">Maladaptive (stuck) emotions</span>
-                    <p class="emotion-def">Locked in past emotional baggage, referring to old wounds, keeping us stuck and overwhelmed in reacting to the present situation (e.g., feeling paralyzing fear when your partner says they want to discuss something with you, although there are no signs that you as a couple are unhappy).</p>
-                </div>
-                
-                <div class="emotion-item">
-                    <span class="emotion-term">Secondary emotions</span>
-                    <p class="emotion-def">Reactions to primary emotions (defensive) (e.g., feeling angry that you are sad, because in your family it was not allowed to cry).</p>
-                </div>
-                
-                <div class="emotion-item">
-                    <span class="emotion-term">Instrumental emotions</span>
-                    <p class="emotion-def">Leverage emotions, emotions used as a means to gain an advantage over another person (e.g., crocodile tears when you get caught cheating on an exam).</p>
-                </div>
-            </div>
-
-                <p>Now that you have learned that emotion is the primary agent of change, we need to look at a few other things: the signature EFTe principles and the specific way in which an EFTe therapist communicates with clients.</p>
-
-                <blockquote>
-                "Emotion Changes Emotion" – Dr. L. Greenberg
-                </blockquote>
-                <p>The main principle behind EFTe is that “emotion can only be changed with emotion,” and it makes a lot of sense - a lot of felt sense. You cannot think and think, and think some more about how to get rid of your maladaptive shame, just like you can’t eat soup with a fork. But you can activate an alternative adaptive emotion (like self-compassion) that will replace the old, unhealthy one (this works because it follows the same path as how the maladaptive emotion was formed initially).</p>
-
-                <blockquote>
-                "You cannot leave a place until you have arrived at it." – Dr. L. Greenberg
-                </blockquote>
-                <p>This principle gives way to another one: ”You cannot leave a place until you have reached it.” To explain this principle, you first need to understand that the emotions we previously explained fit into a greater scheme, called an emotional schema. An emotional schema is a fundamental building block of personality and psychological experience - a complex network that automatically integrates the sensations, memories, cognitive meaning, and action tendencies associated with an emotionally triggering event. Emotional schemes aren’t just a single feeling; they are the simultaneous activation of all their components. We use them because, evolutionarily, we need to react fast to the environment by activating past learned lessons. So, coming back to the principle, in EFTe, the therapist will need to do their best to activate the maladaptive emotional schema in the safety of the room (by bringing up bodily sensations or memories) to facilitate a new emotional experience (like protective anger) in order to re-wire and transform the old script. As you can imagine, activating the schema just once and trying a new response won't instantly rewrite years of conditioning. Depending on the depth of the issue, you will likely need to attend multiple therapy sessions to build lasting change.</p>
-
-                <h3>An EFTe therapist follows and guides</h3>
-                <p>Because EFTe is a person-centered therapy, the attitude of the therapist toward you will be warm, empathic, genuine and positive - meaning your internal experience is being followed with care and appreciation. EFTe takes inspiration also from gestalt therapy, enabling in-session therapeutic tasks or ‘experiments’ (like talking to different parts of yourself or an empty chair representing a past hurt) to make abstract concepts easier to grasp and change. EFTe also integrates existential and systemic therapy, which expands its perspective to human limitations and relational context. To conclude, EFTe is neohumanistic, meaning your experience is central, and you will be treated as the expert of your own life. Nevertheless, this therapeutic presence (concept that relates to the therapist being there, near moment by moment) will be accompanied by guiding you towards proximal experiences that foster changes in the way you process your emotions.</p>
-
-                <h2>Inside the session: what does EFTe actually look like?</h2>
-                <p>If you are worried that therapy is just a passive venting session, let me demystify the room: EFTe is a highly practical, active, and collaborative experience. We don't just talk about your problems - we work with them in real time.</p>
-                <p>Here is exactly how a session unfolds:</p>
-                <ul>
-                    <li><strong>You set the focus:</strong> you always choose the topic or the issue you want to bring to the table.</li>
-                    <li><strong>Active attunement:</strong> I will listen closely, ask clarifying questions, and reflect your experience to make sure I truly understand your world.</li>
-                    <li><strong>Leaning into the pain points:</strong> together, we will gently slow down and zoom in on the specific areas or emotional "hot spots" where you feel most stuck.</li>
-                    <li><strong>Experiential experiments:</strong> with your permission, when a core issue arises, I will guide you into an in-the-moment task (such as an imaginary dialogue, a roleplay, or a somatic tracking exercise). This helps safely activate and transform the old emotional script right there in the room.</li>
-                </ul>
-
-                <p>To understand what we are working with, imagine a scenario where a partner looks at their phone and sighs deeply during dinner.</p>
-                <ul>
-                    <li><strong>A healthy, adaptive script responds neutrally:</strong> "They must have had a stressful work email," and simply ask if everything is okay.</li>
-                    <li><strong>An old, maladaptive script (e.g., rooted in childhood neglect) hijacks the moment:</strong> Instantly, their stomach drops and their chest tightens. Their subconscious flashes to memories of parents being emotionally distant or angry, leading them to automatically think, "I am boring. My partner is unhappy with me and regrets being here." They shut down, stop talking, and emotionally withdraw for the rest of the night.</li>
-                </ul>
-                <p>In our sessions, we look closer to these automatic reactions, helping you step out of old survival habits and build new, healthier responses.</p>
-
-                <h2>What do you gain if you commit to this process?</h2>
-                <p>EFT doesn't stop you from feeling sad or angry; it makes you emotionally agile. Ultimately, the goal of this therapy is to help you stop viewing your emotions as enemies to conquer, and instead start treating them as vital data to guide your life. By learning to read your own emotional map, you gain the clarity, resilience, and confidence to navigate whatever comes your way.</p>
-
-                <h2>A note from the author</h2>
-                <p>We live in a society in which everyone tries to sell you something as the ultimate solution, and the field of mental health, where pain increases hope in faster resolution, is not untouched by these practices promoting healing as a profitable commodity. You should remain vigilant and exercise critical thinking, whenever you choose your (life) path.</p>
-                <p>Due to circumstances, for the last 7 years, I spoke and wrote more frequently in English, than in my native language, and I am still considering if this website is going to have a Romanian version. Nevertheless, I did grow up and studied psychology and psychotherapy in Eastern-Europe, and I had the privilege to meet fellow-colleagues from various countries & continents and to notice grand differences in perspectives. They might be explained by cultural differences, as Romania has only recently started transitioning to individualism and autonomy, stubbornly keeping hold of its dependence on relationships and belonging as primary source of wellbeing, with values like solidarity, immediate comfort, and features of high power distance and high uncertainty avoidance being prominent (David, 2015). While I initially finished my studies in another experiential approach, I left soon after because at that point it did not look as an applicable science, but rather as an improvisation (and I am being very kind to describe it like that). This vocational deception, backed by meeting academicians and practitioners from the West on one hand, but also from the more objective side of psychology (psychometrics) on the other hand, has fed a blue-bitter skepticism about my own profession for almost 15 years. When I discovered EFT existed, I was happy to learn it offered objective protocols to deal with the very cluttered world of feelings and emotions; and not only that!!! EFT-becoming specialists would train and get supervision on real, taped cases. I still keep a healthy dose of skepticism, just because I believe we should search and use all means within the reach of our field to improve the health of our clients, but EFT has softened a lot of my distrust in therapeutic success. I assume, that this is my disclaimer sign warning you, reader, that my choice of EFTe as my main therapeutic practice methodology is partly based on my origins and my experiences, and partly on my personal ethos – that therapy should no longer exist in the future, as by then humanity has finally learned how to be self-soothing, emotionally literate, and mutually supportive. My job, is not to fix you, but to hand you over the keys, to equip you with those sustainable skills.</p>
-
-                <h3>Sources:</h3>
-                <ul>
-                    <li>David, D. (2015). Psihologia poporului român: Profilul psihologic al românilor într-o monografie cognitiv-experimentală [Psychology of the Romanian people: The psychological profile of Romanians in a cognitive-experimental monograph]. Editura POLIROM.</li>
-                    <li>Elliott, R., Watson, J. C., Goldman, R. N., & Greenberg, L. S. (2025). Getting started with learning emotion-focused therapy. In R. Elliott, J. C. Watson, R. N. Goldman, & L. S. Greenberg, Learning emotion-focused therapy: A comprehensive guide (2nd ed., pp. 3–20). American Psychological Association. <a href="https://doi.org/10.1037/0000458-001" target="_blank" rel="noopener noreferrer">https://doi.org/10.1037/0000458-001</a></li>
-                    <li>Leslie S. Greenberg: Award for Distinguished Professional Contributions to Applied Research (2012). American Psychologist, 67(8), 695–697. <a href="https://doi.org/10.1037/a0030302" target="_blank" rel="noopener noreferrer">https://doi.org/10.1037/a0030302</a></li>
-                </ul>
-            </div>
-
-            <div class="article-author-box">
-                <img src="images/camelia-portrait-150-150-2.jpg" alt="Camelia-Gabriela Ionescu" class="author-avatar">
-                <div class="author-info">
-                    <h4>Written by Camelia-Gabriela Ionescu</h4>
-                    <p>Clinical Psychologist and certified EFT Psychotherapist, and advocate for emotional literacy.</p>
-                </div>
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <ul class="footer-nav">
-                <li><a href="faq.html">Help/FAQ</a></li>
-                <li><a href="terms.html">T&C</a></li>
-                <li><a href="cookies.html">Cookies</a></li>
-                <li><a href="privacy.html">Privacy & GDPR</a></li>
-                <li><a href="consumer.html">Consumer Info</a></li>
-            </ul>
-             <p class="copyright">&copy; <span id="current-year">2026</span> Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist & EFT Psychotherapist</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentYear = new Date().getFullYear();
-            
-            const startYear = 2008; 
-            const expElements = document.querySelectorAll('.years-experience');
-            expElements.forEach(function(el) {
-                el.textContent = currentYear - startYear;
-            });
-
-            const copyrightElement = document.getElementById('current-year');
-            if (copyrightElement) {
-                copyrightElement.textContent = currentYear;
-            }
-        });
-    </script>
-</body>
-</html>
-
+<p>&nbsp;</p>
+<header><a class="logo" href="index.html">Camelia-Gabriela Ionescu</a><nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="bio.html">Bio</a></li>
+<li><a href="projects.html">Projects &amp; Resources</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav></header>
+<p><a class="back-link" href="projects.html">Back to Projects &amp; Resources</a></p>
+<article>
+<div class="article-header">
+<h1>Understanding Emotion-Focused Therapy (EFT)</h1>
+<div class="article-meta"><span class="meta-category">Therapy</span>May 10, 202610 Min Read</div>
+</div>
+<img class="article-hero-image" src="images/articol-1200-600-1.jpg" alt="Abstract representation of therapy" />
+<div class="article-content">
+<p>EFT is an evidence-based approach that views emotions as the primary drivers of change. Discover how you can use EFT to replace old, destructive patterns with more resilient ways of responding to the world.</p>
+<h2>Intro - emotions as underlying drivers of behaviour</h2>
+<p>Why do you feel paralyzed by a work email? Why do you snap at your partner over the dishes in the sink? Why do you suddenly become sad when there&rsquo;s no apparent cause? You might be overreacting to the same old triggers, or you might become so overwhelmed that you do everything in your power to avoid that experience. Looking for the logic behind it, you might struggle to pinpoint the rational reason for all your hyper- or hyporeactions. At the end of the day, you get &rdquo;hijacked&rdquo; by your own mood. Depending on how long this has been going on, it can range from annoying and frustrating to devastatingly impairing - otherwise, you wouldn&rsquo;t be reading this article.</p>
+<p>A major part of the solution is to stop searching for the logic behind your behaviors, and instead start looking at your experience through the lens of your emotions. According to Emotion-Focused Therapy (EFT), emotions are the fundamental drivers of your experience, and they are always trying to tell you something. If you don&rsquo;t stop and listen soon, the quality of your life will continue to suffer.</p>
+<h2>EFT history - from outer space to inner worlds</h2>
+<p>Quite a while ago (the '80s), a special breed of therapists started to gather scientific evidence toward something other than thoughts and behaviors (as in Cognitive-Behavioral Therapy - CBT, that was indeed helpful up to a point, but incomplete). A former nuclear physicist engineer, named Leslie Greenberg, found his calling in psychotherapy research and practice where he was preoccupied with how change could be best facilitated in therapy. Teaming up with another clinician, named Sue Johnson, they studied the process in numerous sessions, noticing that <strong>clients who were engaged emotionally changed more</strong>. Although their interests followed different routes, creating two different branches of EFT: Dr. Greenberg&rsquo;s EFTe Emotion-Focused Therapy and Dr. Johnson&rsquo;s EFTa Emotionally Focused Therapy, with EFTe focusing on emotion (in individuals) and EFTa on attachment (in couples), their work brought the world <strong>a functioning emotion model in psychotherapy.</strong></p>
+<h2>Emotions at the center of human functioning and healing</h2>
+<p>The EFTe methodology is built on the premise that emotions are <strong>naturally adaptive and serve to inform needs and direct action</strong> (<a href="resources/emotion-to-needs-eft-worksheet-2026.pdf" target="_blank" rel="noopener noreferrer">here&rsquo;s <strong>free access</strong> to the worksheet I have specifically designed on this topic</a>). Due to past emotional injuries, or just by being taught to dismiss them, emotions can also become maladaptive. Therefore, EFTe focuses on helping you identify, experience, and transform maladaptive emotional states by accessing more adaptive, primary emotions. If you imagine a timeline, <strong>primary adaptive emotions</strong> are the healthy first reactions to an event and <strong>primary maladaptive emotions</strong> are the unhealthy gut reactions triggered by the event, but learned from past wounds or trauma, while <strong>secondary emotions</strong> come after on the timeline, as reactions to shield the primary emotions that are perceived as unsafe. <strong>Instrumental emotions</strong> are a tool-type category of emotions in this model, and serve to gain leverage over someone; they are not genuine. As you have already guessed, only primary adaptive emotions offer healthy guidance, informing us about our wants, needs, and action tendencies adequate to the moment (here&rsquo;s free access to more in-depth, practical info about the types of emotions in EFTe &ndash; if you do not have time, you can just use the essential definitions in the cassette).</p>
+<div class="emotion-cassette">
+<h3>The EFTe Emotion Categories</h3>
+<div class="emotion-item"><span class="emotion-term">Primary emotions</span>
+<p class="emotion-def">Instant gut reactions, can be adaptive or maladaptive.</p>
+</div>
+<div class="emotion-item"><span class="emotion-term">Adaptive emotions</span>
+<p class="emotion-def">Naturally fitting and appropriate responses to the current situation (e.g., feeling happy you got a raise, feeling sad because a close relative passed away, feeling fear when you hear a large animal in the forest).</p>
+</div>
+<div class="emotion-item"><span class="emotion-term">Maladaptive (stuck) emotions</span>
+<p class="emotion-def">Locked in past emotional baggage, referring to old wounds, keeping us stuck and overwhelmed in reacting to the present situation (e.g., feeling paralyzing fear when your partner says they want to discuss something with you, although there are no signs that you as a couple are unhappy).</p>
+</div>
+<div class="emotion-item"><span class="emotion-term">Secondary emotions</span>
+<p class="emotion-def">Reactions to primary emotions (defensive) (e.g., feeling angry that you are sad, because in your family it was not allowed to cry).</p>
+</div>
+<div class="emotion-item"><span class="emotion-term">Instrumental emotions</span>
+<p class="emotion-def">Leverage emotions, emotions used as a means to gain an advantage over another person (e.g., crocodile tears when you get caught cheating on an exam).</p>
+</div>
+</div>
+<p>Now that you have learned that emotion is the primary agent of change, we need to look at a few other things: the signature EFTe principles and the specific way in which an EFTe therapist communicates with clients.</p>
+<blockquote>"Emotion Changes Emotion" &ndash; Dr. L. Greenberg</blockquote>
+<p>The main principle behind EFTe is that &ldquo;<em>emotion can only be changed with emotion</em>,&rdquo; and it makes a lot of sense - a lot of <strong>felt</strong> sense. You cannot think and think, and think some more about how to get rid of your maladaptive shame, just like you can&rsquo;t eat soup with a fork. But you can activate an alternative adaptive emotion (like self-compassion) that will replace the old, unhealthy one (this works because it follows the same path as how the maladaptive emotion was formed initially).</p>
+<blockquote>"You cannot leave a place until you have arrived at it." &ndash; Dr. L. Greenberg</blockquote>
+<p>This principle gives way to another one: &rdquo;<em>You cannot leave a place until you have reached it.</em>&rdquo; To explain this principle, you first need to understand that the emotions we previously explained fit into a greater scheme, called an emotional schema. <strong>An emotional schema</strong> is a fundamental building block of personality and psychological experience - a complex network that automatically integrates the sensations, memories, cognitive meaning, and action tendencies associated with an emotionally triggering event. Emotional schemes aren&rsquo;t just a single feeling; they are the simultaneous activation of all their components. We use them because, evolutionarily, we need to react fast to the environment by activating past learned lessons.</p>
+<p>So, coming back to the principle, in EFTe, the therapist will need to do their best to activate the maladaptive emotional schema in the safety of the room (by bringing up bodily sensations or memories) to facilitate a new emotional experience (like protective anger) in order to re-wire and transform the old script. As you can imagine, activating the schema just once and trying a new response won't instantly rewrite years of conditioning. Depending on the depth of the issue, you will likely need to attend multiple therapy sessions to build lasting change.</p>
+<h3>An EFTe therapist follows and guides</h3>
+<p>Because EFTe is a person-centered therapy, the attitude of the therapist toward you will be warm, empathic, genuine and positive - meaning your internal experience is <strong>being <span style="text-decoration: underline;">followed</span></strong> with care and appreciation. EFTe takes inspiration also from gestalt therapy, enabling <strong>in-session therapeutic tasks</strong> or &lsquo;experiments&rsquo; (like talking to different parts of yourself or an empty chair representing a past hurt) to make abstract concepts easier to grasp and change. EFTe also integrates existential and systemic therapy, which expands its perspective to human limitations and relational context. To conclude, EFTe is neohumanistic, meaning <strong>your experience is central,</strong> and you will be treated as <strong>the expert of your own life</strong>. Nevertheless, this therapeutic presence (concept that relates to the therapist being there, near moment by moment) will be accompanied by <span style="text-decoration: underline;"><strong>guiding</strong></span> you towards proximal experiences that foster changes in the way you process your emotions.</p>
+<h2>Inside the session: what does EFTe actually look like?</h2>
+<p>If you are worried that therapy is just a passive venting session, let me demystify the room: EFTe is a highly practical, active, and collaborative experience. We don't just talk about your problems - we work with them in real time.</p>
+<p>Here is exactly how a session unfolds:</p>
+<ul>
+<li><strong>You set the focus:</strong> you always choose the topic or the issue you want to bring to the table.</li>
+<li><strong>Active attunement:</strong> I will listen closely, ask clarifying questions, and reflect your experience to make sure I truly understand your world.</li>
+<li><strong>Leaning into the pain points:</strong> together, we will gently slow down and zoom in on the specific areas or emotional "hot spots" where you feel most stuck.</li>
+<li><strong>Experiential experiments:</strong> with your permission, when a core issue arises, I will guide you into an in-the-moment task (such as an imaginary dialogue, a roleplay, or a somatic tracking exercise). This helps safely activate and transform the old emotional script right there in the room.</li>
+</ul>
+<p>To understand what we are working with, imagine a scenario where a partner looks at their phone and sighs deeply during dinner.</p>
+<ul>
+<li>A healthy, <strong>adaptive</strong> script responds neutrally<strong>:</strong> "They must have had a stressful work email," and simply ask if everything is okay.</li>
+<li>An old, <strong>maladaptive </strong>script (e.g., rooted in childhood neglect) hijacks the moment:
+<ul>
+<li><strong>Sensation</strong> - instantly, their stomach drops and their chest tightens.</li>
+<li><strong>Memory</strong> - flashes back to parents being emotionally distant or angry, leading them to automated thoughts.</li>
+<li><strong>Meaning</strong> - they automatically think, "<em>I am boring. My partner is unhappy with me and regrets being here.</em>"</li>
+<li><strong>Action</strong> - They shut down, stop talking, and emotionally withdraw for the rest of the night.</li>
+</ul>
+</li>
+</ul>
+<p>In our sessions, we look closer to these automatic reactions, helping you step out of old survival habits and build new, healthier responses.</p>
+<h2>What do you gain if you commit to this process?</h2>
+<p>EFT doesn't stop you from feeling sad or angry; it makes you <strong>emotionally agile.</strong> Ultimately, the goal of this therapy is to help you stop viewing your emotions as enemies to conquer, and instead start treating them as vital data to guide your life. By learning to read your own emotional map, you gain the clarity, resilience, and confidence to navigate whatever comes your way.</p>
+<h2>A note from the author</h2>
+<p>We live in a society in which everyone tries to sell you something as the ultimate solution, and the field of mental health, where pain increases hope in faster resolution, is not untouched by these practices promoting healing as a profitable commodity. You should remain vigilant and exercise critical thinking, whenever you choose your (life) path.</p>
+<p>Due to circumstances, for the last 7 years, I spoke and wrote more frequently in English, than in my native language, and I am still considering if this website is going to have a Romanian version. Nevertheless, I did grow up and studied psychology and psychotherapy in Eastern-Europe, and I had the privilege to meet fellow-colleagues from various countries &amp; continents and to notice grand differences in perspectives. They might be explained by cultural differences, as Romania has only recently started transitioning to individualism and autonomy, stubbornly keeping hold of its dependence on relationships and belonging as primary source of wellbeing, with values like solidarity, immediate comfort, and features of high power distance and high uncertainty avoidance being prominent (David, 2015).</p>
+<p>While I initially finished my studies in another experiential approach, I left soon after because at that point it did not look as an applicable science, but rather as an improvisation (and I am being very kind to describe it like that). This vocational deception, backed by meeting academicians and practitioners from the West on one hand, but also from the more objective side of psychology (psychometrics) on the other hand, has fed a blue-bitter skepticism about my own profession for almost 15 years. When I discovered EFT existed, I was happy to learn it offered objective protocols to deal with the very cluttered world of feelings and emotions; and not only that!!! EFT-becoming specialists would train and get supervision on real, taped cases. I still keep a healthy dose of skepticism, just because I believe we should search and use all means within the reach of our field to improve the health of our clients, but EFT has softened a lot of my distrust in therapeutic success.</p>
+<p>I assume, that this is my disclaimer sign warning you, reader, that my choice of EFTe as my main therapeutic practice methodology is partly based on my origins and my experiences, and partly on my personal ethos &ndash; that therapy should no longer exist in the future, as by then humanity has finally learned how to be self-soothing, emotionally literate, and mutually supportive. My job, is not to fix you, but to hand you over the keys, to equip you with those sustainable skills.</p>
+<h3>Sources:</h3>
+<ul>
+<li>David, D. (2015). Psihologia poporului rom&acirc;n: Profilul psihologic al rom&acirc;nilor &icirc;ntr-o monografie cognitiv-experimentală [Psychology of the Romanian people: The psychological profile of Romanians in a cognitive-experimental monograph]. Editura POLIROM.</li>
+<li>Elliott, R., Watson, J. C., Goldman, R. N., &amp; Greenberg, L. S. (2025). Getting started with learning emotion-focused therapy. In R. Elliott, J. C. Watson, R. N. Goldman, &amp; L. S. Greenberg, Learning emotion-focused therapy: A comprehensive guide (2nd ed., pp. 3&ndash;20). American Psychological Association. <a href="https://doi.org/10.1037/0000458-001" target="_blank" rel="noopener noreferrer">https://doi.org/10.1037/0000458-001</a></li>
+<li>Leslie S. Greenberg: Award for Distinguished Professional Contributions to Applied Research (2012). American Psychologist, 67(8), 695&ndash;697. <a href="https://doi.org/10.1037/a0030302" target="_blank" rel="noopener noreferrer">https://doi.org/10.1037/a0030302</a></li>
+</ul>
+</div>
+<div class="article-author-box"><img class="author-avatar" src="images/camelia-portrait-150-150-2.jpg" alt="Camelia-Gabriela Ionescu" />
+<div class="author-info">
+<h4>Written by Camelia-Gabriela Ionescu</h4>
+<p>Clinical Psychologist and certified EFT Psychotherapist, and advocate for emotional literacy.</p>
+</div>
+</div>
+</article>
+<footer>
+<div class="footer-content">
+<ul class="footer-nav">
+<li><a href="faq.html">Help/FAQ</a></li>
+<li><a href="terms.html">T&amp;C</a></li>
+<li><a href="cookies.html">Cookies</a></li>
+<li><a href="privacy.html">Privacy &amp; GDPR</a></li>
+<li><a href="consumer.html">Consumer Info</a></li>
+</ul>
+<p class="copyright">&copy; <span id="current-year">2026</span> Camelia-Gabriela Ionescu. All Rights Reserved. | Clinical Psychologist &amp; EFT Psychotherapist</p>
+</div>
+</footer>
